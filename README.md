@@ -2,7 +2,7 @@
 
 Absensi Elektronik Menggunakan Qr Qode
 
-ini merupakan suatu alat atau aplikasi yang digunakan di dalam kelas untuk melakukan absensi
+ini merupakan suatu alat atau aplikasi yang digunakan di dalam kelas untuk melakukan absensi yang menggukan HP berbasis android
 
 untuk memudahkan dosen dan mahasiswa dalam melakukan absensi
 
