@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:background="@color/background"
+        android:textColor="@color/putih"
+        android:textSize="32sp"
+        android:text="@string/awal" />
+    <!--button mahasiswa-->
+    <Button
+        android:id="@+id/buttonmaha"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignTop="@id/textView2"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:text="@string/maha"/>
+    <!--button dosen-->
+    <Button
+        android:id="@+id/buttondosen"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignLeft="@id/buttonmaha"
+        android:layout_alignTop="@id/textView2"
+        android:layout_marginLeft="200dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="250dp"
+        android:layout_alignStart="@id/buttonmaha"
+        android:text="@string/dosen" />
+    <!--button info-->
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignTop="@id/buttonmaha"
+        android:layout_marginTop="175dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:text="@string/info" />
+    <!--button tentang-->
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignLeft="@id/button3"
+        android:layout_alignTop="@id/buttondosen"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="175dp"
+        android:layout_alignStart="@id/button3"
+        android:layout_marginStart="200dp"
+        android:text="@string/tentang" />
+
+</RelativeLayout>

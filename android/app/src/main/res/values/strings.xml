@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">enigma</string>
+    <string name="nama">DINUS\nAbcence</string>
+    <string name="awal">Welcome to\nDINUS Abcence</string>
+    <string name="maha">Mahasiswa</string>
+    <string name="dosen">Dosen</string>
+    <string name="info">Info</string>
+    <string name="tentang">Tentang</string>
+    <string name="login">Log In</string>
+    <string name="email">E-mail</string>
+    <string name="pass">Password</string>
+    <string name="masuk">Masuk</string>
+    <string name="Akun">Buat Akun Baru</string>
+    <string name="Dicki">Prof Dicki Kurniawan</string>
+    <string name="nip">123.4567.8910</string>
+    <string name="list">List\nKehadiran</string>
+    <string name="absen">Absen</string>
+    <string name="dicki">Dicki Kurniawan</string>
+    <string name="nim">A11.2017.10115</string>
+    <string name="code">QR\nCode</string>
+    <string name="kelas">Kriptografi\nA11.4606</string>
+    <string name="kode">A11.4601</string>
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".DosenActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textColor="@color/putih"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        android:textSize="32sp" />
+    <!--input email-->
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignTop="@id/textView4"
+        android:layout_marginTop="200dp"
+        android:autofillHints="@string/email"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textPersonName"
+        android:textColor="@color/putih"
+        android:background="@color/putih"
+        android:textSize="24sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+    <!--input password-->
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignTop="@id/editText2"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="16dp"
+        android:autofillHints="@string/pass"
+        android:background="@color/putih"
+        android:ems="10"
+        android:hint="@string/pass"
+        android:inputType="textPersonName"
+        android:textSize="24sp" />
+    <!--button masuk-->
+    <Button
+        android:id="@+id/buttonmasukdosen"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignTop="@id/editText3"
+        android:layout_marginTop="140dp"
+        android:text="@string/masuk"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textSize="16sp"
+        android:background="@color/put"/>
+    <!--button akun baru-->
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignTop="@id/buttonmasukdosen"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/put"
+        android:text="@string/Akun"
+        android:textSize="16sp" />
+</RelativeLayout>

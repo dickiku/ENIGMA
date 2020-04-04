@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MasukMahasiswa">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/background">
+            <!--gambar user-->
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/dicki"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"/>
+            <!--nama user-->
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dicki"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/putih"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"/>
+            <!--nim user-->
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nim"
+                android:textColor="@color/putih"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--button QR code-->
+        <Button
+            android:id="@+id/buttoncode"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:text="@string/code"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"/>
+    </RelativeLayout>
+
+</LinearLayout>
