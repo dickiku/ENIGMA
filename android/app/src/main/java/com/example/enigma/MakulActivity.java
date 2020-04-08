@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MakulActivity extends AppCompatActivity {
     private Button buttonmakul1;
+    private ImageView backlist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +24,22 @@ public class MakulActivity extends AppCompatActivity {
                 openMakulActivity();
             }
         });
+
+        backlist = (ImageView) findViewById(R.id.backlist);
+        backlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBackList();
+            }
+        });
     }
 
     public void openMakulActivity(){
         Intent intent = new Intent(this, ListKehadiran.class);
+        startActivity(intent);
+    }
+    public void openBackList(){
+        Intent intent = new Intent(this,MasukDosen.class);
         startActivity(intent);
     }
 }

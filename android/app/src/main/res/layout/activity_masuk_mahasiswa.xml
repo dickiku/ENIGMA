@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@color/background">
+            android:background="@color/dodge">
             <!--gambar user-->
             <ImageView
                 android:id="@+id/imageView3"
@@ -40,23 +40,26 @@
                 android:layout_height="wrap_content"
                 android:text="@string/nim"
                 android:textColor="@color/putih"
-                android:textSize="24sp"
-                android:textStyle="bold"
+                android:textSize="16sp"
                 android:layout_gravity="center_horizontal"/>
         </LinearLayout>
     </RelativeLayout>
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <!--button QR code-->
         <Button
             android:id="@+id/buttoncode"
+            android:background="@color/put"
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:text="@string/code"
-            android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"/>
-    </RelativeLayout>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.363" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

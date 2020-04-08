@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@color/background">
+            android:background="@color/dodge">
             <!--gambar user-->
             <ImageView
                 android:layout_width="100dp"
@@ -36,34 +36,44 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/nip"
-                android:textStyle="bold"
                 android:textColor="@color/putih"
                 android:layout_gravity="center_horizontal"
-                android:textSize="24sp"/>
+                android:textSize="16sp"/>
         </LinearLayout>
     </RelativeLayout>
-    <RelativeLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <!--button list kehadiran-->
+        <!--button absen-->
+
         <Button
             android:id="@+id/buttonlist"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:text="@string/list" />
-        <!--button absen-->
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:background="@color/put"
+            android:text="@string/list"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.201" />
+
         <Button
             android:id="@+id/buttonabsen"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:layout_alignLeft="@id/buttonlist"
             android:layout_alignStart="@id/buttonlist"
-            android:layout_marginLeft="200dp"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="32dp"
-            android:text="@string/absen" />
-    </RelativeLayout>
+            android:layout_alignLeft="@id/buttonlist"
+            android:background="@color/put"
+            android:text="@string/absen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toEndOf="@+id/buttonlist"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.201" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

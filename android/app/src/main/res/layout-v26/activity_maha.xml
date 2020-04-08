@@ -4,39 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/dodge"
     tools:context=".MahaActivity">
-
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="70dp">
+        <ImageView
+            android:id="@+id/backlogmaha"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/backk"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"/>
+    </LinearLayout>
     <!--login-->
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:textColor="@color/putih"
         android:textSize="32sp"
+        android:textStyle="bold"
         android:text="@string/login" />
     <!--email-->
     <EditText
         android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
         android:layout_alignTop="@id/textView3"
         android:layout_marginTop="200dp"
+        android:layout_centerInParent="true"
         android:autofillHints="@string/email"
         android:hint="@string/email"
         android:background="@color/putih"
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="@color/hitam"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"/>
     <!--password-->
     <EditText
         android:id="@+id/editText1"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
         android:layout_alignTop="@id/editText"
+        android:layout_centerInParent="true"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="80dp"
         android:layout_marginRight="16dp"
@@ -46,25 +62,27 @@
         android:hint="@string/pass"
         android:inputType="textPersonName"
         android:textColor="@color/hitam"
-        android:textSize="24sp" />
+        android:textSize="16sp" />
     <!--masuk-->
     <Button
         android:id="@+id/buttonmasukmaha"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
         android:layout_alignTop="@id/editText1"
+        android:layout_centerInParent="true"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="99dp"
         android:layout_marginRight="16dp"
-        android:text="@string/masuk"
         android:background="@color/put"
-        android:textSize="16sp"/>
+        android:text="@string/masuk"
+        android:textSize="16sp" />
     <!--buatakun-->
     <Button
         android:id="@+id/button6"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
         android:layout_alignTop="@id/buttonmasukmaha"
+        android:layout_centerInParent="true"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="80dp"
         android:layout_marginRight="16dp"
