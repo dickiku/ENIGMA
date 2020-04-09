@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MasukDosen extends AppCompatActivity {
     private Button buttonlist;
     private Button buttonabsen;
+    private Button outdosen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,14 @@ public class MasukDosen extends AppCompatActivity {
             }
         });
 
+        outdosen = (Button) findViewById(R.id.outdosen);
+        outdosen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openKembaliKeHome();
+            }
+        });
+
     }
     public void openlistkehadiran(){
         Intent intent = new Intent(this,MakulActivity.class);
@@ -39,6 +48,10 @@ public class MasukDosen extends AppCompatActivity {
     }
     public void openAbsenScanner(){
         Intent intent = new Intent(this,AbsenScanner.class);
+        startActivity(intent);
+    }
+    public void openKembaliKeHome(){
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
     }
 }

@@ -25,7 +25,7 @@
         android:text="@string/login"
         android:textColor="@color/putih"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="56dp"
         android:textStyle="bold"
         android:textSize="32sp" />
     <!--input email-->
@@ -35,7 +35,7 @@
         android:layout_height="56dp"
         android:layout_alignTop="@id/textView4"
         android:layout_centerInParent="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:autofillHints="@string/email"
         android:ems="10"
         android:hint="@string/email"

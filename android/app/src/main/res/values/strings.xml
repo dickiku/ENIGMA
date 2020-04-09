@@ -9,8 +9,8 @@
     <string name="login">Log In</string>
     <string name="email">E-mail</string>
     <string name="pass">Password</string>
-    <string name="masuk">Masuk</string>
-    <string name="Akun">Buat Akun Baru</string>
+    <string name="masuk">Log In</string>
+    <string name="Akun">Sign Up</string>
     <string name="Dicki">Prof Dicki Kurniawan</string>
     <string name="nip">123.4567.8910</string>
     <string name="list">List\nKehadiran</string>
@@ -20,4 +20,5 @@
     <string name="code">QR\nCode</string>
     <string name="kelas">Kriptografi\nA11.4606</string>
     <string name="kode">A11.4601</string>
+    <string name="logout">Log Out</string>
 </resources>

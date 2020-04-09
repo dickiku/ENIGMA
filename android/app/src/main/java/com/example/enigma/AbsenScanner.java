@@ -11,6 +11,9 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.zxing.Result;
@@ -22,6 +25,7 @@ import static android.Manifest.permission.CAMERA;
 public class AbsenScanner extends AppCompatActivity implements ZXingScannerView.ResultHandler{
     private static final int REQUEST_CAMERA = 1;
     private ZXingScannerView scannerView;
+    private ImageView backabsen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,7 @@ public class AbsenScanner extends AppCompatActivity implements ZXingScannerView.
                 requestPermissions();
             }
         }
+
     }
     private boolean checkPermission(){
         return (ContextCompat.checkSelfPermission(AbsenScanner.this, CAMERA)== PackageManager.PERMISSION_GRANTED);
@@ -133,4 +138,5 @@ public class AbsenScanner extends AppCompatActivity implements ZXingScannerView.
         AlertDialog alert = builder.create();
         alert.show();
     }
+
 }

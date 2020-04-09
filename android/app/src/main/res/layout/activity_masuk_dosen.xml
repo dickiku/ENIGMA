@@ -46,8 +46,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <!--button list kehadiran-->
-        <!--button absen-->
-
         <Button
             android:id="@+id/buttonlist"
             android:layout_width="130dp"
@@ -60,20 +58,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.201" />
-
+        <!--button absen-->
         <Button
             android:id="@+id/buttonabsen"
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_alignStart="@id/buttonlist"
             android:layout_alignLeft="@id/buttonlist"
+            android:layout_marginEnd="64dp"
+            android:layout_marginRight="64dp"
             android:background="@color/put"
             android:text="@string/absen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.486"
-            app:layout_constraintStart_toEndOf="@+id/buttonlist"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.201" />
+
+        <Button
+            android:id="@+id/outdosen"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:background="@color/red"
+            android:text="@string/logout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.800" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
