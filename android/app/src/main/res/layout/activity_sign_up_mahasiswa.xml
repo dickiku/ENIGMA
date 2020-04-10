@@ -5,97 +5,94 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dodge"
-    tools:context=".SignUpDosen">
+    tools:context=".SignUpMahasiswa">
     <TextView
-        android:id="@+id/signupdos"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/dosen"
+        android:text="@string/maha"
         android:textColor="@color/putih"
-        android:textStyle="bold"
+        android:textAlignment="center"
         android:textSize="32sp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp">
-    </TextView>
-    <!--NIP-->
+        android:layout_marginTop="24dp"
+        android:textStyle="bold"/>
+    <!-- nim-->
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editText5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/signupdos"
-        android:layout_centerVertical="true"
+        android:layout_alignTop="@id/textView2"
         android:layout_marginTop="150dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        android:textAlignment="center"
-        android:textColor="@color/put"
+        android:inputType="textPersonName"
         android:layout_centerInParent="true"
-        android:hint="@string/nipp"
-        android:autofillHints="@string/nipp"/>
+        android:textColor="@color/put"
+        android:textAlignment="center"
+        android:hint="@string/nimm"
+        android:autofillHints="@string/nimm"/>
     <!--nama-->
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/editText9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/editText4"
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
+        android:layout_alignTop="@id/editText5"
         android:layout_marginTop="50dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/put"
+        android:inputType="textPersonName"
+        android:layout_centerInParent="true"
         android:textAlignment="center"
+        android:textColor="@color/put"
         android:hint="@string/namaa"
         android:autofillHints="@string/namaa"/>
     <!--email-->
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/editText10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/editText6"
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
+        android:layout_alignTop="@id/editText9"
         android:layout_marginTop="50dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:textColor="@color/put"
         android:textAlignment="center"
+        android:layout_centerInParent="true"
         android:hint="@string/email"
         android:autofillHints="@string/email"/>
-    <!-- pass -->
+    <!--password-->
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/editText11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/editText7"
+        android:layout_alignTop="@id/editText10"
         android:layout_centerInParent="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="50dp"
         android:ems="10"
         android:inputType="textPassword"
-        android:textColor="@color/put"
         android:textAlignment="center"
+        android:textColor="@color/put"
         android:hint="@string/pass"
         android:autofillHints="@string/pass"/>
-    <!--button signup-->
+    <!--sign up-->
     <Button
-        android:id="@+id/buttondaftardosen"
+        android:id="@+id/buttondaftarmahasiswa"
         android:layout_width="300dp"
         android:layout_height="56dp"
-        android:layout_alignTop="@id/editText8"
-        android:layout_marginTop="93dp"
+        android:layout_alignTop="@+id/editText11"
+        android:layout_marginTop="97dp"
         android:text="@string/Akun"
-        android:layout_centerInParent="true"
-        android:background="@color/putih"/>
-    <!--button log in-->
+        android:background="@color/putih"
+        android:layout_centerInParent="true" />
+    <!--log in-->
     <Button
-        android:id="@+id/buttonkelogin"
+        android:id="@+id/kembalikelogin"
         android:layout_width="300dp"
         android:layout_height="56dp"
-        android:layout_alignTop="@id/buttondaftardosen"
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
+        android:layout_alignTop="@id/buttondaftarmahasiswa"
         android:layout_marginTop="70dp"
+        android:background="@color/putih"
         android:text="@string/login"
-        android:background="@color/putih"/>
+        android:layout_centerInParent="true"/>
+
 </RelativeLayout>

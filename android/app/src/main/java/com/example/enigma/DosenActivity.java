@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class DosenActivity extends AppCompatActivity {
-    private Button buttonmasukdosen;
+    private Button buttonmasukdosen,buttondaftardosen;
     private ImageView backlogdosen;
 
 
@@ -35,6 +35,13 @@ public class DosenActivity extends AppCompatActivity {
             }
         });
 //        Button sign up
+        buttondaftardosen = (Button) findViewById(R.id.buttondaftardosen);
+        buttondaftardosen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDaftarDosen();
+            }
+        });
     }
 
 //    Tampil ke Masuk Dosen
@@ -46,5 +53,8 @@ public class DosenActivity extends AppCompatActivity {
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
     }
-
+    public void openDaftarDosen(){
+        Intent intent = new Intent(this,SignUpDosen.class);
+        startActivity(intent);
+    }
 }

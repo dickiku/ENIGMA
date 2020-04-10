@@ -50,7 +50,7 @@ public class MahaActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openDaftarAkun(){
-        Intent intent = new Intent(this,SignUpDosen.class);
+        Intent intent = new Intent(this,SignUpMahasiswa.class);
         startActivity(intent);
     }
 }
