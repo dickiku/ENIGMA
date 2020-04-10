@@ -78,13 +78,13 @@
         android:textSize="16sp" />
     <!--buatakun-->
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/tomboldaftar"
         android:layout_width="300dp"
         android:layout_height="56dp"
         android:layout_alignTop="@id/buttonmasukmaha"
         android:layout_centerInParent="true"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="70dp"
         android:layout_marginRight="16dp"
         android:text="@string/Akun"
         android:background="@color/put"

@@ -21,4 +21,6 @@
     <string name="kelas">Kriptografi\nA11.4606</string>
     <string name="kode">A11.4601</string>
     <string name="logout">Log Out</string>
+    <string name="nipp">NIP</string>
+    <string name="namaa">Nama</string>
 </resources>

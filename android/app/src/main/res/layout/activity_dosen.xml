@@ -39,8 +39,7 @@
         android:autofillHints="@string/email"
         android:ems="10"
         android:hint="@string/email"
-        android:inputType="textPersonName"
-        android:textColor="@color/putih"
+        android:inputType="textEmailAddress"
         android:background="@color/putih"
         android:textSize="16sp"
         android:layout_marginLeft="16dp"
@@ -59,7 +58,7 @@
         android:background="@color/putih"
         android:ems="10"
         android:hint="@string/pass"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textSize="16sp" />
     <!--button masuk-->
     <Button
@@ -76,13 +75,13 @@
         android:background="@color/put"/>
     <!--button akun baru-->
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/buttonsignupdosen"
         android:layout_width="300dp"
         android:layout_height="56dp"
         android:layout_alignTop="@id/buttonmasukdosen"
         android:layout_centerInParent="true"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="70dp"
         android:layout_marginRight="16dp"
         android:background="@color/put"
         android:text="@string/Akun"

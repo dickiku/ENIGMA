@@ -12,6 +12,7 @@ public class DosenActivity extends AppCompatActivity {
     private Button buttonmasukdosen;
     private ImageView backlogdosen;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +26,7 @@ public class DosenActivity extends AppCompatActivity {
                 openMasukDosen();
             }
         });
-
+//        Button back
         backlogdosen = (ImageView) findViewById(R.id.backlogdosen);
         backlogdosen.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +34,7 @@ public class DosenActivity extends AppCompatActivity {
                 openKembaliDosen();
             }
         });
+//        Button sign up
     }
 
 //    Tampil ke Masuk Dosen
@@ -44,4 +46,5 @@ public class DosenActivity extends AppCompatActivity {
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
     }
+
 }

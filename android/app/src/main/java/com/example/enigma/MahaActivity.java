@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class MahaActivity extends AppCompatActivity {
-    private Button buttonmasukmaha;
+    private Button buttonmasukmaha,tomboldaftar;
     private ImageView backlogmaha;
 
     @Override
@@ -32,6 +32,14 @@ public class MahaActivity extends AppCompatActivity {
                 opentampilanawal();
             }
         });
+
+        tomboldaftar = (Button) findViewById(R.id.tomboldaftar);
+        tomboldaftar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDaftarAkun();
+            }
+        });
     }
     public void openMasukMaha(){
         Intent intent = new Intent(this,MasukMahasiswa.class);
@@ -39,6 +47,10 @@ public class MahaActivity extends AppCompatActivity {
     }
     public void opentampilanawal(){
         Intent intent = new Intent(this,HomeActivity.class);
+        startActivity(intent);
+    }
+    public void openDaftarAkun(){
+        Intent intent = new Intent(this,SignUpDosen.class);
         startActivity(intent);
     }
 }
