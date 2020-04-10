@@ -73,7 +73,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="99dp"
         android:layout_marginRight="16dp"
-        android:background="@color/put"
+        android:background="@drawable/custombutton"
         android:text="@string/masuk"
         android:textSize="16sp" />
     <!--buatakun-->
@@ -87,6 +87,6 @@
         android:layout_marginTop="70dp"
         android:layout_marginRight="16dp"
         android:text="@string/Akun"
-        android:background="@color/put"
+        android:background="@drawable/custombutton"
         android:textSize="16sp"/>
 </RelativeLayout>

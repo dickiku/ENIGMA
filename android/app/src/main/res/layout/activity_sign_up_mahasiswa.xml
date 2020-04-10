@@ -82,7 +82,7 @@
         android:layout_alignTop="@+id/editText11"
         android:layout_marginTop="97dp"
         android:text="@string/Akun"
-        android:background="@color/putih"
+        android:background="@drawable/custombutton"
         android:layout_centerInParent="true" />
     <!--log in-->
     <Button
@@ -91,7 +91,7 @@
         android:layout_height="56dp"
         android:layout_alignTop="@id/buttondaftarmahasiswa"
         android:layout_marginTop="70dp"
-        android:background="@color/putih"
+        android:background="@drawable/custombutton"
         android:text="@string/login"
         android:layout_centerInParent="true"/>
 

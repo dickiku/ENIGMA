@@ -86,7 +86,7 @@
         android:layout_marginTop="93dp"
         android:text="@string/Akun"
         android:layout_centerInParent="true"
-        android:background="@color/putih"/>
+        android:background="@drawable/custombutton"/>
     <!--button log in-->
     <Button
         android:id="@+id/buttonkelogin"
@@ -97,5 +97,5 @@
         android:layout_centerVertical="true"
         android:layout_marginTop="70dp"
         android:text="@string/login"
-        android:background="@color/putih"/>
+        android:background="@drawable/custombutton"/>
 </RelativeLayout>

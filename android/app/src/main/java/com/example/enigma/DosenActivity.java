@@ -35,7 +35,7 @@ public class DosenActivity extends AppCompatActivity {
             }
         });
 //        Button sign up
-        buttondaftardosen = (Button) findViewById(R.id.buttondaftardosen);
+        buttondaftardosen = (Button) findViewById(R.id.buttonsignupdosen);
         buttondaftardosen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +54,7 @@ public class DosenActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openDaftarDosen(){
-        Intent intent = new Intent(this,SignUpDosen.class);
+        Intent intent = new Intent(this, SignUpDosen.class);
         startActivity(intent);
     }
 }

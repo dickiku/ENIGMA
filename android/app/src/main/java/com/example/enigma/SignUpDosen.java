@@ -16,7 +16,7 @@ public class SignUpDosen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_dosen);
 
-        buttonsignupdos = (Button) findViewById(R.id.buttonsignupdosen);
+        buttonsignupdos = (Button) findViewById(R.id.buttondaftardosen);
         buttonsignupdos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

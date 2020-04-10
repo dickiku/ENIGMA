@@ -45,7 +45,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 //    Tampilan ke LogIn Dosen
     public void openDosenActivity(){
-        Intent intent = new Intent(this,DosenActivity.class);
+        Intent intent = new Intent(this, DosenActivity.class);
+        //Intent intent = new Intent(this, DosenActivity.class);
         startActivity(intent);
     }
 }
