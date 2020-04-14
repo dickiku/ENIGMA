@@ -60,7 +60,7 @@
         android:background="@color/putih"
         android:ems="10"
         android:hint="@string/pass"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textColor="@color/hitam"
         android:textSize="16sp" />
     <!--masuk-->

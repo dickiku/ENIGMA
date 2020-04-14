@@ -70,7 +70,7 @@ public class SignUpDosen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(showpassdosen.getText() == "SHOW"){
-                    passdosen.setText("HIDE");
+                    showpassdosen.setText("HIDE");
                     passdosen.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
                     passdosen.setSelection(passdosen.length());
                 }
