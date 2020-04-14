@@ -7,15 +7,27 @@
     android:background="@color/dodge"
     tools:context=".SignUpDosen">
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/createaccountdos"
+        android:text="@string/buatakun"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/putih"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"/>
+    <TextView
         android:id="@+id/signupdos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dosen"
         android:textColor="@color/putih"
+        android:layout_alignTop="@id/createaccountdos"
         android:textStyle="bold"
         android:textSize="32sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp">
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp">
     </TextView>
     <!--NIP-->
     <EditText
@@ -27,8 +39,7 @@
         android:layout_marginTop="150dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:textAlignment="center"
-        android:textColor="@color/put"
+        android:textColor="@color/hitam"
         android:layout_centerInParent="true"
         android:hint="@string/nipp"
         android:autofillHints="@string/nipp"/>
@@ -43,8 +54,7 @@
         android:layout_marginTop="50dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:textColor="@color/put"
-        android:textAlignment="center"
+        android:textColor="@color/hitam"
         android:hint="@string/namaa"
         android:autofillHints="@string/namaa"/>
     <!--email-->
@@ -58,13 +68,12 @@
         android:layout_marginTop="50dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:textColor="@color/put"
-        android:textAlignment="center"
+        android:textColor="@color/hitam"
         android:hint="@string/email"
         android:autofillHints="@string/email"/>
     <!-- pass -->
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/passdosen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/editText7"
@@ -73,16 +82,24 @@
         android:layout_marginTop="50dp"
         android:ems="10"
         android:inputType="textPassword"
-        android:textColor="@color/put"
-        android:textAlignment="center"
+        android:textColor="@color/hitam"
         android:hint="@string/pass"
         android:autofillHints="@string/pass"/>
+    <TextView
+        android:id="@+id/showpassdosen"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/passdosen"
+        android:layout_alignTop="@id/passdosen"
+        android:text="@string/show"
+        android:layout_marginLeft="167dp"
+        android:layout_marginTop="15dp"/>
     <!--button signup-->
     <Button
         android:id="@+id/buttondaftardosen"
         android:layout_width="300dp"
         android:layout_height="56dp"
-        android:layout_alignTop="@id/editText8"
+        android:layout_alignTop="@id/passdosen"
         android:layout_marginTop="93dp"
         android:text="@string/Akun"
         android:layout_centerInParent="true"

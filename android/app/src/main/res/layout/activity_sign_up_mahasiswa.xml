@@ -7,17 +7,29 @@
     android:background="@color/dodge"
     tools:context=".SignUpMahasiswa">
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/createaccount"
+        android:text="@string/buatakun"
+        android:textColor="@color/putih"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"/>
+    <!-- nim-->
+    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/createaccount"
+        android:layout_marginTop="40dp"
         android:text="@string/maha"
         android:textColor="@color/putih"
-        android:textAlignment="center"
+        android:layout_centerInParent="true"
         android:textSize="32sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:textStyle="bold"/>
-    <!-- nim-->
+        android:textStyle="bold" />
+    <!--nama-->
     <EditText
         android:id="@+id/editText5"
         android:layout_width="wrap_content"
@@ -27,10 +39,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_centerInParent="true"
-        android:textColor="@color/put"
-        android:textAlignment="center"
+        android:textColor="@color/hitam"
         android:hint="@string/nimm"
-        android:autofillHints="@string/nimm"/>
+        android:autofillHints="@string/nimm" />
     <!--nama-->
     <EditText
         android:id="@+id/editText9"
@@ -41,8 +52,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_centerInParent="true"
-        android:textAlignment="center"
-        android:textColor="@color/put"
+        android:textColor="@color/hitam"
         android:hint="@string/namaa"
         android:autofillHints="@string/namaa"/>
     <!--email-->
@@ -54,14 +64,13 @@
         android:layout_marginTop="50dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:textColor="@color/put"
-        android:textAlignment="center"
+        android:textColor="@color/hitam"
         android:layout_centerInParent="true"
         android:hint="@string/email"
         android:autofillHints="@string/email"/>
     <!--password-->
     <EditText
-        android:id="@+id/editText11"
+        android:id="@+id/passmaha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/editText10"
@@ -70,16 +79,26 @@
         android:layout_marginTop="50dp"
         android:ems="10"
         android:inputType="textPassword"
-        android:textAlignment="center"
-        android:textColor="@color/put"
+        android:textColor="@color/hitam"
         android:hint="@string/pass"
         android:autofillHints="@string/pass"/>
+    <!--show/hide-->
+    <TextView
+        android:id="@+id/show"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/passmaha"
+        android:layout_alignTop="@id/passmaha"
+        android:layout_marginLeft="167dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:text="@string/show"/>
     <!--sign up-->
     <Button
         android:id="@+id/buttondaftarmahasiswa"
         android:layout_width="300dp"
         android:layout_height="56dp"
-        android:layout_alignTop="@+id/editText11"
+        android:layout_alignTop="@+id/passmaha"
         android:layout_marginTop="97dp"
         android:text="@string/Akun"
         android:background="@drawable/custombutton"
@@ -94,5 +113,7 @@
         android:background="@drawable/custombutton"
         android:text="@string/login"
         android:layout_centerInParent="true"/>
+
+
 
 </RelativeLayout>

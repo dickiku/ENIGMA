@@ -24,5 +24,6 @@
     <string name="nipp">NIP</string>
     <string name="namaa">Nama</string>
     <string name="nimm">NIM</string>
-
+    <string name="buatakun">Create Account</string>
+    <string name="show">SHOW</string>
 </resources>
