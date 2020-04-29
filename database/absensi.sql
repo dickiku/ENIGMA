@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 12 Apr 2020 pada 09.25
+-- Generation Time: 29 Apr 2020 pada 13.09
 -- Versi Server: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -86,13 +86,13 @@ ALTER TABLE `dosen`
 -- Indexes for table `kehadiran`
 --
 ALTER TABLE `kehadiran`
- ADD PRIMARY KEY (`id_kehadiran`), ADD UNIQUE KEY `id_mhs` (`id_mhs`), ADD UNIQUE KEY `id_kelas` (`id_kelas`);
+ ADD PRIMARY KEY (`id_kehadiran`);
 
 --
 -- Indexes for table `kelas`
 --
 ALTER TABLE `kelas`
- ADD PRIMARY KEY (`id_kelas`), ADD UNIQUE KEY `id_dosen` (`id_dsn`);
+ ADD PRIMARY KEY (`id_kelas`);
 
 --
 -- Indexes for table `mahasiswa`
@@ -124,28 +124,6 @@ MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT;
 --
 ALTER TABLE `mahasiswa`
 MODIFY `id_mhs` int(11) NOT NULL AUTO_INCREMENT;
---
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
---
-
---
--- Ketidakleluasaan untuk tabel `dosen`
---
-ALTER TABLE `dosen`
-ADD CONSTRAINT `dosen_ibfk_1` FOREIGN KEY (`id_dsn`) REFERENCES `kelas` (`id_dsn`);
-
---
--- Ketidakleluasaan untuk tabel `kelas`
---
-ALTER TABLE `kelas`
-ADD CONSTRAINT `kelas_ibfk_1` FOREIGN KEY (`id_kelas`) REFERENCES `kehadiran` (`id_kelas`);
-
---
--- Ketidakleluasaan untuk tabel `mahasiswa`
---
-ALTER TABLE `mahasiswa`
-ADD CONSTRAINT `mahasiswa_ibfk_1` FOREIGN KEY (`id_mhs`) REFERENCES `kehadiran` (`id_mhs`);
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -2,7 +2,9 @@ package com.example.enigma;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
@@ -11,11 +13,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.HashMap;
 
 public class SignUpMahasiswa extends AppCompatActivity {
     private Button buttondaftarmahasiswa,kembalikelogin;
     private TextView show;
     private EditText passmaha;
+    private EditText namamaha;
+    private EditText nimmaha;
+    private EditText emailmaha;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +45,10 @@ public class SignUpMahasiswa extends AppCompatActivity {
             }
         });
 
-        passmaha = (EditText) findViewById(R.id.passmaha);
+        nimmaha = (EditText) findViewById(R.id.nimmahasignup);
+        namamaha = (EditText) findViewById(R.id.namamahasignup);
+        emailmaha = (EditText) findViewById(R.id.emailmahasignup);
+        passmaha = (EditText) findViewById(R.id.passmahasignup);
         show = (TextView)findViewById(R.id.show);
 
         show.setVisibility(View.GONE);
@@ -82,11 +93,53 @@ public class SignUpMahasiswa extends AppCompatActivity {
     }
 
     public void openSignupMaha(){
-        Intent intent = new Intent(this,SignUpMahasiswa.class);
-        startActivity(intent);
+        addMaha();
+        //Intent intent = new Intent(this,MasukMahasiswa.class);
+        //startActivity(intent);
     }
     public void openKembaliLogin(){
         Intent intent = new Intent(this,MahaActivity.class);
         startActivity(intent);
+    }
+    private void addMaha(){
+
+        final String nama = namamaha.getText().toString().trim();
+        final String nim = nimmaha.getText().toString().trim();
+        final String email = emailmaha.getText().toString().trim();
+        final String pass = passmaha.getText().toString().trim();
+
+        class AddMaha extends AsyncTask<Void,Void,String> {
+
+            ProgressDialog loading;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(SignUpMahasiswa.this,"Menambahkan...","Tunggu...",false,false);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                Toast.makeText(SignUpMahasiswa.this,s,Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            protected String doInBackground(Void... v) {
+                HashMap<String,String> params = new HashMap<>();
+                params.put(konfigurasi.KEY_maha_NIM,nim);
+                params.put(konfigurasi.KEY_maha_NAMA,nama);
+                params.put(konfigurasi.KEY_maha_EMAIL,email);
+                params.put(konfigurasi.KEY_maha_PASS,pass);
+
+                RequestHandler rh = new RequestHandler();
+                String res = rh.sendPostRequest(konfigurasi.URL_ADD, params);
+                return res;
+            }
+        }
+
+        AddMaha am = new AddMaha();
+        am.execute();
     }
 }

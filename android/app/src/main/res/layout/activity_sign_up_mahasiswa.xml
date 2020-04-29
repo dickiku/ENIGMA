@@ -29,9 +29,9 @@
         android:layout_centerInParent="true"
         android:textSize="32sp"
         android:textStyle="bold" />
-    <!--nama-->
+    <!--nim-->
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/nimmahasignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/textView2"
@@ -44,10 +44,10 @@
         android:autofillHints="@string/nimm" />
     <!--nama-->
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/namamahasignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/editText5"
+        android:layout_alignTop="@id/nimmahasignup"
         android:layout_marginTop="50dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -57,10 +57,10 @@
         android:autofillHints="@string/namaa"/>
     <!--email-->
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/emailmahasignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/editText9"
+        android:layout_alignTop="@id/namamahasignup"
         android:layout_marginTop="50dp"
         android:ems="10"
         android:inputType="textEmailAddress"
@@ -70,10 +70,10 @@
         android:autofillHints="@string/email"/>
     <!--password-->
     <EditText
-        android:id="@+id/passmaha"
+        android:id="@+id/passmahasignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/editText10"
+        android:layout_alignTop="@id/emailmahasignup"
         android:layout_centerInParent="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="50dp"
@@ -87,8 +87,8 @@
         android:id="@+id/show"
         android:layout_width="45dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/passmaha"
-        android:layout_alignTop="@id/passmaha"
+        android:layout_alignLeft="@id/passmahasignup"
+        android:layout_alignTop="@id/passmahasignup"
         android:layout_marginLeft="167dp"
         android:layout_marginTop="15dp"
         android:ems="10"
@@ -98,7 +98,7 @@
         android:id="@+id/buttondaftarmahasiswa"
         android:layout_width="300dp"
         android:layout_height="56dp"
-        android:layout_alignTop="@+id/passmaha"
+        android:layout_alignTop="@+id/passmahasignup"
         android:layout_marginTop="97dp"
         android:text="@string/Akun"
         android:background="@drawable/custombutton"
