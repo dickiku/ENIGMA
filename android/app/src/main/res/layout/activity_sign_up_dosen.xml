@@ -31,7 +31,7 @@
     </TextView>
     <!--NIP-->
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/nipdsnsignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/signupdos"
@@ -45,10 +45,10 @@
         android:autofillHints="@string/nipp"/>
     <!--nama-->
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/namadsnsignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/editText4"
+        android:layout_alignTop="@id/nipdsnsignup"
         android:layout_centerInParent="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="50dp"
@@ -59,10 +59,10 @@
         android:autofillHints="@string/namaa"/>
     <!--email-->
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/emaildsnsignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/editText6"
+        android:layout_alignTop="@id/namadsnsignup"
         android:layout_centerInParent="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="50dp"
@@ -73,10 +73,10 @@
         android:autofillHints="@string/email"/>
     <!-- pass -->
     <EditText
-        android:id="@+id/passdosen"
+        android:id="@+id/passdosensignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/editText7"
+        android:layout_alignTop="@+id/emaildsnsignup"
         android:layout_centerInParent="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="50dp"
@@ -89,8 +89,8 @@
         android:id="@+id/showpassdosen"
         android:layout_width="45dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/passdosen"
-        android:layout_alignTop="@id/passdosen"
+        android:layout_alignLeft="@id/passdosensignup"
+        android:layout_alignTop="@id/passdosensignup"
         android:text="@string/show"
         android:layout_marginLeft="167dp"
         android:layout_marginTop="15dp"/>
@@ -99,7 +99,7 @@
         android:id="@+id/buttondaftardosen"
         android:layout_width="300dp"
         android:layout_height="56dp"
-        android:layout_alignTop="@id/passdosen"
+        android:layout_alignTop="@id/passdosensignup"
         android:layout_marginTop="93dp"
         android:text="@string/Akun"
         android:layout_centerInParent="true"

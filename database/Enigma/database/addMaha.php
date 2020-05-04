@@ -6,7 +6,7 @@
 		$email = $_POST['email'];
 		$pass = $_POST['pass'];
 		
-		sql = "INSERT INTO mahasiswa (nim,nama,email,password) VALUES ('$nim','$nama','$email','$pass')";
+		$sql = "INSERT INTO mahasiswa (nim,nama,email,password) VALUES ('$nim','$nama','$email','$pass')";
 		
 		//Import File Koneksi database
 		require_once('koneksi.php');

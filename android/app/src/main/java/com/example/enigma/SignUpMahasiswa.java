@@ -134,7 +134,7 @@ public class SignUpMahasiswa extends AppCompatActivity {
                 params.put(konfigurasi.KEY_maha_PASS,pass);
 
                 RequestHandler rh = new RequestHandler();
-                String res = rh.sendPostRequest(konfigurasi.URL_ADD, params);
+                String res = rh.sendPostRequest(konfigurasi.URL_ADD_MHS, params);
                 return res;
             }
         }
