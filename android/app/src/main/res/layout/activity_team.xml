@@ -21,7 +21,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:gravity="center_horizontal"
-                    android:text="@string/awal"
+                    android:text="@string/team1"
                     android:textColor="@color/put"
                     android:textSize="32sp"
                     android:textStyle="bold"
@@ -33,10 +33,9 @@
             android:layout_height="wrap_content"
             android:columnOrderPreserved="false"
             android:alignmentMode="alignMargins"
-            android:rowCount="2"
-            android:columnCount="2">
+            android:rowCount="4"
+            android:columnCount="1">
             <androidx.cardview.widget.CardView
-                android:id="@+id/buttonmaha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -51,20 +50,24 @@
                     android:padding="15dp"
                     android:orientation="vertical">
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/education"/>
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/dicki"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/maha"
-                        android:textSize="18sp"
-                        android:textColor="@color/hitam"
-                        android:layout_marginTop="12dp"/>
+                        android:text="Dicki Kurniawan"
+                        android:textSize="20sp"
+                        android:textColor="@color/hitam"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ENIGMA Leader (Web Programmer)"
+                        android:textSize="20sp"
+                        android:textColor="@color/hitam"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:id="@+id/buttondosen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -79,20 +82,24 @@
                     android:padding="15dp"
                     android:orientation="vertical">
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/people"/>
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/bagas"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/dosen"
-                        android:textSize="18sp"
-                        android:textColor="@color/hitam"
-                        android:layout_marginTop="12dp"/>
+                        android:text="Bagas Alfian Firmansyah"
+                        android:textSize="20sp"
+                        android:textColor="@color/hitam"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ENIGMA Member (Mobile Programmer)"
+                        android:textSize="20sp"
+                        android:textColor="@color/hitam"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:id="@+id/buttoninfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -107,20 +114,24 @@
                     android:padding="15dp"
                     android:orientation="vertical">
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/info"/>
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/bagus"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/info"
-                        android:textSize="18sp"
-                        android:textColor="@color/hitam"
-                        android:layout_marginTop="12dp"/>
+                        android:text="Bagus Rahma Aulia Chandra"
+                        android:textSize="20sp"
+                        android:textColor="@color/hitam"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ENIGMA Member (Web Programmer)"
+                        android:textSize="20sp"
+                        android:textColor="@color/hitam"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:id="@+id/buttonteam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -135,74 +146,23 @@
                     android:padding="15dp"
                     android:orientation="vertical">
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/team"/>
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/filibert"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/team"
-                        android:textSize="18sp"
-                        android:textColor="@color/hitam"
-                        android:layout_marginTop="12dp"/>
+                        android:text="Filibert Florianus Mulia"
+                        android:textSize="20sp"
+                        android:textColor="@color/hitam"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ENIGMA Member (Mobile Programmer)"
+                        android:textSize="20sp"
+                        android:textColor="@color/hitam"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </GridLayout>
-
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="horizontal">-->
-<!--            <Button-->
-<!--                android:id="@+id/buttonmaha"-->
-<!--                android:layout_width="130dp"-->
-<!--                android:layout_height="130dp"-->
-<!--                android:layout_marginStart="40dp"-->
-<!--                android:layout_marginLeft="40dp"-->
-<!--                android:layout_marginTop="56dp"-->
-<!--                android:background="@color/put"-->
-<!--                android:text="@string/maha"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.0"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-<!--            <Button-->
-<!--                android:id="@+id/buttondosen"-->
-<!--                android:layout_width="130dp"-->
-<!--                android:layout_height="130dp"-->
-<!--                android:layout_marginTop="56dp"-->
-<!--                android:layout_marginEnd="40dp"-->
-<!--                android:layout_marginRight="40dp"-->
-<!--                android:background="@color/put"-->
-<!--                android:text="@string/dosen"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="1.0"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-<!--            <Button-->
-<!--                android:id="@+id/button3"-->
-<!--                android:layout_width="130dp"-->
-<!--                android:layout_height="130dp"-->
-<!--                android:layout_marginStart="40dp"-->
-<!--                android:layout_marginLeft="40dp"-->
-<!--                android:background="@color/put"-->
-<!--                android:text="@string/info"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/buttonmaha"-->
-<!--                app:layout_constraintVertical_bias="0.216" />-->
-<!--            <Button-->
-<!--                android:id="@+id/button4"-->
-<!--                android:layout_width="130dp"-->
-<!--                android:layout_height="130dp"-->
-<!--                android:layout_marginEnd="40dp"-->
-<!--                android:layout_marginRight="40dp"-->
-<!--                android:background="@color/put"-->
-<!--                android:text="@string/tentang"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/buttondosen"-->
-<!--                app:layout_constraintVertical_bias="0.216" />-->
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
     </LinearLayout>
 </ScrollView>

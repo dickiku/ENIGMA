@@ -31,44 +31,45 @@
         android:text="@string/login" />
     <!--email-->
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/emailmahalogin"
         android:layout_width="300dp"
-        android:layout_height="56dp"
-        android:layout_alignTop="@id/textView3"
-        android:layout_marginTop="150dp"
-        android:layout_centerInParent="true"
-        android:autofillHints="@string/email"
-        android:hint="@string/email"
-        android:background="@color/putih"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="@color/hitam"
-        android:textSize="16sp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+        android:inputType="textEmailAddress"
+        android:hint="@string/email"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_marginTop="150dp"/>
     <!--password-->
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/passmahalogin"
         android:layout_width="300dp"
-        android:layout_height="56dp"
-        android:layout_alignTop="@id/editText"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginRight="16dp"
-        android:autofillHints="@string/pass"
-        android:background="@color/putih"
+        android:layout_height="wrap_content"
         android:ems="10"
+        android:inputType="textPassword"
         android:hint="@string/pass"
-        android:inputType="textPersonName"
-        android:textColor="@color/hitam"
-        android:textSize="16sp" />
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_alignTop="@+id/emailmahalogin"
+        android:layout_marginTop="60dp"/>
+    <!--show hide-->
+    <TextView
+        android:id="@+id/showlogmaha"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/passmahalogin"
+        android:layout_alignTop="@id/passmahalogin"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:text="@string/show"/>
     <!--masuk-->
     <Button
         android:id="@+id/buttonmasukmaha"
         android:layout_width="300dp"
         android:layout_height="56dp"
-        android:layout_alignTop="@id/editText1"
+        android:layout_alignTop="@id/passmahalogin"
         android:layout_centerInParent="true"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="99dp"

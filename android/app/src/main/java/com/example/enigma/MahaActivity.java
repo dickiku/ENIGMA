@@ -4,13 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MahaActivity extends AppCompatActivity {
     private Button buttonmasukmaha,tomboldaftar;
     private ImageView backlogmaha;
+    private EditText passmahalogin;
+    private TextView showlogmaha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,49 @@ public class MahaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openDaftarAkun();
+            }
+        });
+
+        passmahalogin = (EditText) findViewById(R.id.passmahalogin);
+        showlogmaha = (TextView)findViewById(R.id.showlogmaha);
+
+        showlogmaha.setVisibility(View.GONE);
+        passmahalogin.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        passmahalogin.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(passmahalogin.getText().length()>0){
+                    showlogmaha.setVisibility(View.VISIBLE);
+                }
+                else{
+                    showlogmaha.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        showlogmaha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(showlogmaha.getText() == "SHOW"){
+                    showlogmaha.setText("HIDE");
+                    passmahalogin.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    passmahalogin.setSelection(passmahalogin.length());
+                }
+                else{
+                    showlogmaha.setText("SHOW");
+                    passmahalogin.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    passmahalogin.setSelection(passmahalogin.length());
+                }
             }
         });
     }

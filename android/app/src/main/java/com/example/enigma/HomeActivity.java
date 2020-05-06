@@ -1,6 +1,7 @@
 package com.example.enigma;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +12,10 @@ import com.example.enigma.MahaActivity;
 import com.example.enigma.R;
 
 public class HomeActivity extends AppCompatActivity {
-    private Button buttonmaha;
-    private Button buttondosen;
+    private CardView buttonmaha;
+    private CardView buttondosen;
+    private CardView buttoninfo;
+    private CardView buttonteam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 //        Button Mahasiswa
-        buttonmaha = (Button) findViewById(R.id.buttonmaha);
+        buttonmaha = (CardView) findViewById(R.id.buttonmaha);
         buttonmaha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,11 +32,27 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 //        Button Dosen
-        buttondosen = (Button) findViewById(R.id.buttondosen);
+        buttondosen = (CardView) findViewById(R.id.buttondosen);
         buttondosen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openDosenActivity();
+            }
+        });
+
+        buttoninfo = (CardView) findViewById(R.id.buttoninfo);
+        buttoninfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openInfoActivity();
+            }
+        });
+
+        buttonteam = (CardView) findViewById(R.id.buttonteam);
+        buttonteam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTeamActivity();
             }
         });
 
@@ -47,6 +66,14 @@ public class HomeActivity extends AppCompatActivity {
     public void openDosenActivity(){
         Intent intent = new Intent(this, DosenActivity.class);
         //Intent intent = new Intent(this, DosenActivity.class);
+        startActivity(intent);
+    }
+    public void openInfoActivity(){
+        Intent intent = new Intent(this,InfoActivity.class);
+        startActivity(intent);
+    }
+    public void openTeamActivity(){
+        Intent intent = new Intent(this,TeamActivity.class);
         startActivity(intent);
     }
 }

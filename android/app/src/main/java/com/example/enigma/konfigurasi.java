@@ -2,8 +2,8 @@ package com.example.enigma;
 
 public class konfigurasi {
     //PENTING! JANGAN LUPA GANTI IP SESUAI DENGAN IP KOMPUTER DIMANA DATA PHP BERADA
-    public static final String URL_ADD_MHS="http://192.168.100.12/Enigma/database/addMaha.php";
-    public static final String URL_ADD_DSN="http://192.168.100.12/Enigma/database/addDosen.php";
+    public static final String URL_ADD_MHS="http://192.168.18.8/Enigma/database/addMaha.php";
+    public static final String URL_ADD_DSN="http://192.168.18.8/Enigma/database/addDosen.php";
 //    public static final String URL_GET_ALL = "http://192.168.100.12/Android/pegawai/tampilSemuaPgw.php";
 //    public static final String URL_GET_EMP = "http://192.168.100.12/Android/pegawai/tampilPgw.php?id=";
 //    public static final String URL_UPDATE_EMP = "http://192.168.100.12/Android/pegawai/updatePgw.php";

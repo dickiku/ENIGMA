@@ -26,4 +26,11 @@
     <string name="nimm">NIM</string>
     <string name="buatakun">Create Account</string>
     <string name="show">SHOW</string>
+    <string name="team">Team</string>
+    <string name="infodinus">Info\nDinus Abcence</string>
+    <string name="isiinfo">Dinus Abcence adalah sebuah aplikasi absensi berbasis mobile yang diciptakan guna mempermudah sistem pengabsenan pada saat perkuliahan.
+    Tujuan awal pembuatan aplikasi ini adalah melihat pada saat ini sistem absen pada Udinus yang masih tradisional dengan menggunakan kertas.
+    Untuk itu dibuatlah aplikasi ini  guna mempermudah masalah absen.
+    \nSelain itu pembuatan aplikasi ini juga dalam rangka memenuhi tugas kuliah Proyek Perangkat Lunak yang dilalui pada semester 6 ini.</string>
+    <string name="team1">Team\nDinus Abcence</string>
 </resources>
