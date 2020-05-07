@@ -2,22 +2,32 @@ package com.example.enigma;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.HashMap;
 
 public class DosenActivity extends AppCompatActivity {
     private Button buttonmasukdosen,buttondaftardosen;
+    private String email, pass;
     private ImageView backlogdosen;
     private TextView showpassdsn;
     private EditText passdsnlogin;
+    private EditText emaildsnlogin;
+    Boolean CheckEditText ;
+    public static final String UserEmail = "";
 
 
     @Override
@@ -50,6 +60,7 @@ public class DosenActivity extends AppCompatActivity {
             }
         });
 
+        emaildsnlogin = (EditText) findViewById(R.id.emaildsnlogin);
         passdsnlogin = (EditText) findViewById(R.id.passdsnlogin);
         showpassdsn = (TextView)findViewById(R.id.showpassdsn);
 
@@ -96,8 +107,20 @@ public class DosenActivity extends AppCompatActivity {
 
 //    Tampil ke Masuk Dosen
     public void openMasukDosen(){
-        Intent intent = new Intent(this, MasukDosen.class);
-        startActivity(intent);
+        CheckEditTextIsEmptyOrNot();
+
+        if(CheckEditText){
+
+            Login(email, pass);
+
+        }
+        else {
+
+            Toast.makeText(DosenActivity.this, "Please fill all form fields.", Toast.LENGTH_LONG).show();
+
+        }
+//        Intent intent = new Intent(this, MasukDosen.class);
+//        startActivity(intent);
     }
     public void openKembaliDosen(){
         Intent intent = new Intent(this, HomeActivity.class);
@@ -107,4 +130,71 @@ public class DosenActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SignUpDosen.class);
         startActivity(intent);
     }
+    public void CheckEditTextIsEmptyOrNot(){
+
+        email = emaildsnlogin.getText().toString();
+        pass = passdsnlogin.getText().toString();
+
+        if(TextUtils.isEmpty(email) || TextUtils.isEmpty(pass))
+        {
+            CheckEditText = false;
+        }
+        else {
+
+            CheckEditText = true ;
+        }
+    }
+    public void Login(final String email, final String password){
+
+        class LoginClass extends AsyncTask<String,Void,String> {
+            ProgressDialog progressDialog;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+                progressDialog = ProgressDialog.show(DosenActivity.this,"Loading Data",null,true,true);
+            }
+
+            @Override
+            protected void onPostExecute(String httpResponseMsg) {
+
+                super.onPostExecute(httpResponseMsg);
+
+                progressDialog.dismiss();
+
+                if(httpResponseMsg.equalsIgnoreCase("Data Matched")){
+
+                    finish();
+
+                    Intent intent = new Intent(DosenActivity.this, MasukDosen.class);
+
+                    intent.putExtra(UserEmail,email);
+
+                    startActivity(intent);
+
+                }
+                else{
+
+                    Toast.makeText(DosenActivity.this,httpResponseMsg,Toast.LENGTH_LONG).show();
+                }
+
+            }
+
+            @Override
+            protected String doInBackground(String... s) {
+
+                HashMap<String,String> params = new HashMap<>();
+                params.put(konfigurasi.KEY_dsn_EMAIL,email);
+                params.put(konfigurasi.KEY_dsn_PASS,password);
+
+                RequestHandler rh = new RequestHandler();
+                String res = rh.sendPostRequest(konfigurasi.URL_LOGIN_DSN, params);
+                return res;
+            }
+        }
+
+        LoginClass userLoginClass = new LoginClass();
+        userLoginClass.execute(email,password);
+    }
+
 }
