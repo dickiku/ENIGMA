@@ -2,22 +2,32 @@ package com.example.enigma;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.HashMap;
 
 public class MahaActivity extends AppCompatActivity {
     private Button buttonmasukmaha,tomboldaftar;
     private ImageView backlogmaha;
     private EditText passmahalogin;
     private TextView showlogmaha;
+    private String email, pass;
+    private EditText emailmahalogin;
+    Boolean CheckEditText;
+    public static final String UserEmail = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +58,7 @@ public class MahaActivity extends AppCompatActivity {
             }
         });
 
+        emailmahalogin = (EditText) findViewById(R.id.emailmahalogin);
         passmahalogin = (EditText) findViewById(R.id.passmahalogin);
         showlogmaha = (TextView)findViewById(R.id.showlogmaha);
 
@@ -92,8 +103,20 @@ public class MahaActivity extends AppCompatActivity {
         });
     }
     public void openMasukMaha(){
-        Intent intent = new Intent(this,MasukMahasiswa.class);
-        startActivity(intent);
+        CheckEditTextIsEmptyOrNot();
+
+        if(CheckEditText){
+
+            LoginMhs(email, pass);
+
+        }
+        else {
+
+            Toast.makeText(MahaActivity.this, "Please fill all form fields.", Toast.LENGTH_LONG).show();
+
+        }
+//        Intent intent = new Intent(this,MasukMahasiswa.class);
+//        startActivity(intent);
     }
     public void opentampilanawal(){
         Intent intent = new Intent(this,HomeActivity.class);
@@ -103,4 +126,72 @@ public class MahaActivity extends AppCompatActivity {
         Intent intent = new Intent(this,SignUpMahasiswa.class);
         startActivity(intent);
     }
+
+    public void CheckEditTextIsEmptyOrNot(){
+
+        email = emailmahalogin.getText().toString();
+        pass = passmahalogin.getText().toString();
+
+        if(TextUtils.isEmpty(email) || TextUtils.isEmpty(pass))
+        {
+            CheckEditText = false;
+        }
+        else {
+
+            CheckEditText = true ;
+        }
+    }
+    public void LoginMhs(final String email, final String password){
+
+        class LoginMhsClass extends AsyncTask<String,Void,String> {
+            ProgressDialog progressDialog;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+                progressDialog = ProgressDialog.show(MahaActivity.this,"Loading Data",null,true,true);
+            }
+
+            @Override
+            protected void onPostExecute(String httpResponseMsg) {
+
+                super.onPostExecute(httpResponseMsg);
+
+                progressDialog.dismiss();
+
+                if(httpResponseMsg.equalsIgnoreCase("Data Matched")){
+
+                    finish();
+
+                    Intent intent = new Intent(MahaActivity.this, MasukMahasiswa.class);
+
+                    intent.putExtra(UserEmail,email);
+
+                    startActivity(intent);
+
+                }
+                else{
+
+                    Toast.makeText(MahaActivity.this,httpResponseMsg,Toast.LENGTH_LONG).show();
+                }
+
+            }
+
+            @Override
+            protected String doInBackground(String... s) {
+
+                HashMap<String,String> params = new HashMap<>();
+                params.put(konfigurasi.KEY_maha_EMAIL,email);
+                params.put(konfigurasi.KEY_maha_PASS,password);
+
+                RequestHandler rh = new RequestHandler();
+                String res = rh.sendPostRequest(konfigurasi.URL_LOGIN_MHS, params);
+                return res;
+            }
+        }
+
+        LoginMhsClass mahaLoginClass = new LoginMhsClass();
+        mahaLoginClass.execute(email,password);
+    }
+
 }

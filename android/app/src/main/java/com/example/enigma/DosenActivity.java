@@ -21,12 +21,12 @@ import java.util.HashMap;
 
 public class DosenActivity extends AppCompatActivity {
     private Button buttonmasukdosen,buttondaftardosen;
-    private String email, pass;
     private ImageView backlogdosen;
     private TextView showpassdsn;
+    private String email, pass;
     private EditText passdsnlogin;
     private EditText emaildsnlogin;
-    Boolean CheckEditText ;
+    Boolean CheckEditText;
     public static final String UserEmail = "";
 
 
@@ -111,7 +111,7 @@ public class DosenActivity extends AppCompatActivity {
 
         if(CheckEditText){
 
-            Login(email, pass);
+            LoginDsn(email, pass);
 
         }
         else {
@@ -144,9 +144,9 @@ public class DosenActivity extends AppCompatActivity {
             CheckEditText = true ;
         }
     }
-    public void Login(final String email, final String password){
+    public void LoginDsn(final String email, final String password){
 
-        class LoginClass extends AsyncTask<String,Void,String> {
+        class LoginDsnClass extends AsyncTask<String,Void,String> {
             ProgressDialog progressDialog;
             @Override
             protected void onPreExecute() {
@@ -193,8 +193,8 @@ public class DosenActivity extends AppCompatActivity {
             }
         }
 
-        LoginClass userLoginClass = new LoginClass();
-        userLoginClass.execute(email,password);
+        LoginDsnClass dosenLoginClass = new LoginDsnClass();
+        dosenLoginClass.execute(email,password);
     }
 
 }

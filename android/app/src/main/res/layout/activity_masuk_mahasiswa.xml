@@ -24,7 +24,7 @@
                 android:layout_marginTop="32dp"/>
             <!--nama user-->
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/namamahamasuk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/dicki"
@@ -35,7 +35,7 @@
                 android:layout_marginTop="32dp"/>
             <!--nim user-->
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/nimmahamasuk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/nim"

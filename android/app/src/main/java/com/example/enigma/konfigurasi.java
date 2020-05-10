@@ -3,6 +3,7 @@ package com.example.enigma;
 public class konfigurasi {
     //PENTING! JANGAN LUPA GANTI IP SESUAI DENGAN IP KOMPUTER DIMANA DATA PHP BERADA
     public static final String URL_ADD_MHS="http://192.168.100.12/Enigma/database/addMaha.php";
+    public static final String URL_LOGIN_MHS="http://192.168.100.12/Enigma/database/loginMaha.php";
     public static final String URL_ADD_DSN="http://192.168.100.12/Enigma/database/addDosen.php";
     public static final String URL_LOGIN_DSN="http://192.168.100.12/Enigma/database/loginDosen.php";
 //    public static final String URL_GET_ALL = "http://192.168.100.12/Android/pegawai/tampilSemuaPgw.php";

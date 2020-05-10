@@ -6,15 +6,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MasukMahasiswa extends AppCompatActivity {
     private Button buttoncode;
     private Button outmaha;
+    TextView EmailShow;
+    String EmailHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_masuk_mahasiswa);
+
+        Intent intent = getIntent();
+        EmailHolder = intent.getStringExtra(MahaActivity.UserEmail);
+        EmailShow.setText(EmailHolder);
 
         buttoncode = (Button)findViewById(R.id.buttoncode);
         buttoncode.setOnClickListener(new View.OnClickListener() {
