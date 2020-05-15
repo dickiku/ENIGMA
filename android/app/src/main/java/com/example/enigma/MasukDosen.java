@@ -12,19 +12,24 @@ public class MasukDosen extends AppCompatActivity {
     private Button buttonlist;
     private Button buttonabsen;
     private Button outdosen;
-    TextView EmailShow;
-    String EmailHolder;
+    TextView namaShow;
+    TextView nipShow;
+    String namaHolder;
+    String nipHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_masuk_dosen);
 
-        EmailShow = (TextView)findViewById(R.id.namadsnmasuk);
+        namaShow = (TextView)findViewById(R.id.namadsnmasuk);
+        nipShow = (TextView)findViewById(R.id.nipdsnmasuk);
 
         Intent intent = getIntent();
-        EmailHolder = intent.getStringExtra(DosenActivity.UserEmail);
-        EmailShow.setText(EmailHolder);
+        namaHolder = intent.getStringExtra(DosenActivity.UserNama);
+        nipHolder = intent.getStringExtra(DosenActivity.UserNIP);
+        namaShow.setText(namaHolder);
+        nipShow.setText(nipHolder);
 
         buttonlist = (Button) findViewById(R.id.buttonlist);
         buttonlist.setOnClickListener(new View.OnClickListener() {

@@ -17,6 +17,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DosenActivity extends AppCompatActivity {
@@ -27,7 +32,9 @@ public class DosenActivity extends AppCompatActivity {
     private EditText passdsnlogin;
     private EditText emaildsnlogin;
     Boolean CheckEditText;
-    public static final String UserEmail = "";
+    public static final String UserNIP = "";
+    public static final String UserNama = "";
+    private String JSON_STRING;
 
 
     @Override
@@ -168,7 +175,9 @@ public class DosenActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(DosenActivity.this, MasukDosen.class);
 
-                    intent.putExtra(UserEmail,email);
+                    showDosen();
+                    intent.putExtra(UserNama,konfigurasi.TAG_dsn_NAMA);
+                    intent.putExtra(UserNIP,konfigurasi.TAG_dsn_NIP);
 
                     startActivity(intent);
 
@@ -195,6 +204,35 @@ public class DosenActivity extends AppCompatActivity {
 
         LoginDsnClass dosenLoginClass = new LoginDsnClass();
         dosenLoginClass.execute(email,password);
+    }
+
+    private void showDosen(){
+        JSONObject jsonObject = null;
+        ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
+        try {
+            jsonObject = new JSONObject(JSON_STRING);
+            JSONArray result = jsonObject.getJSONArray(konfigurasi.TAG_JSON_ARRAY);
+
+            for(int i = 0; i<result.length(); i++){
+                JSONObject jo = result.getJSONObject(i);
+                String id = jo.getString(konfigurasi.TAG_dsn_ID);
+                String name = jo.getString(konfigurasi.TAG_dsn_NAMA);
+                String nip = jo.getString(konfigurasi.TAG_dsn_NIP);
+                String email = jo.getString(konfigurasi.TAG_dsn_EMAIl);
+                String pass = jo.getString(konfigurasi.TAG_dsn_PASS);
+
+                HashMap<String,String> dosen = new HashMap<>();
+                dosen.put(konfigurasi.TAG_dsn_ID,id);
+                dosen.put(konfigurasi.TAG_dsn_NAMA,name);
+                dosen.put(konfigurasi.TAG_dsn_NIP,nip);
+                dosen.put(konfigurasi.TAG_dsn_EMAIl,email);
+                dosen.put(konfigurasi.TAG_dsn_PASS,pass);
+                list.add(dosen);
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 }

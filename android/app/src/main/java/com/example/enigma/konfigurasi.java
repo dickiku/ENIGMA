@@ -6,10 +6,6 @@ public class konfigurasi {
     public static final String URL_LOGIN_MHS="http://192.168.100.12/Enigma/database/loginMaha.php";
     public static final String URL_ADD_DSN="http://192.168.100.12/Enigma/database/addDosen.php";
     public static final String URL_LOGIN_DSN="http://192.168.100.12/Enigma/database/loginDosen.php";
-//    public static final String URL_GET_ALL = "http://192.168.100.12/Android/pegawai/tampilSemuaPgw.php";
-//    public static final String URL_GET_EMP = "http://192.168.100.12/Android/pegawai/tampilPgw.php?id=";
-//    public static final String URL_UPDATE_EMP = "http://192.168.100.12/Android/pegawai/updatePgw.php";
-//    public static final String URL_DELETE_EMP = "http://192.168.100.12/Android/pegawai/hapusPgw.php?id=";
 
     //Dibawah ini merupakan Kunci yang akan digunakan untuk mengirim permintaan ke Skrip PHP
     //mahasiswa
@@ -27,9 +23,15 @@ public class konfigurasi {
 
     //JSON Tags
     public static final String TAG_JSON_ARRAY="result";
-    public static final String TAG_ID = "id";
+    public static final String TAG_maha_ID = "id";
     public static final String TAG_maha_NIM = "nim";
     public static final String TAG_maha_NAMA = "nama";
     public static final String TAG_maha_EMAIl = "email";
     public static final String TAG_maha_PASS = "pass";
+
+    public static final String TAG_dsn_ID = "id";
+    public static final String TAG_dsn_NIP = "nip";
+    public static final String TAG_dsn_NAMA = "nama";
+    public static final String TAG_dsn_EMAIl = "email";
+    public static final String TAG_dsn_PASS = "pass";
 }
