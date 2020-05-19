@@ -15,7 +15,7 @@ public class MasukDosen extends AppCompatActivity {
     TextView namaShow;
     TextView nipShow;
     String namaHolder;
-    //String nipHolder;
+    String nipHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +27,9 @@ public class MasukDosen extends AppCompatActivity {
 
         Intent intent = getIntent();
         namaHolder = intent.getStringExtra(DosenActivity.UserNama);
-        //nipHolder = intent.getStringExtra(DosenActivity.UserNIP);
+        nipHolder = intent.getStringExtra(DosenActivity.UserNIP);
         namaShow.setText(namaHolder);
-        //nipShow.setText(nipHolder);
+        nipShow.setText(nipHolder);
 
         buttonlist = (Button) findViewById(R.id.buttonlist);
         buttonlist.setOnClickListener(new View.OnClickListener() {

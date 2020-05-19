@@ -175,10 +175,10 @@ public class DosenActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(DosenActivity.this, MasukDosen.class);
 
-                    //showDosen();
-                    //intent.putExtra(UserNama,konfigurasi.TAG_dsn_NAMA);
-                    //intent.putExtra(UserNIP,konfigurasi.TAG_dsn_NIP);
-                    intent.putExtra(UserNama,email);
+                    showDosen();
+                    intent.putExtra(UserNama,konfigurasi.TAG_dsn_NAMA);
+                    intent.putExtra(UserNIP,konfigurasi.TAG_dsn_NIP);
+                    //intent.putExtra(UserNama,email);
 
                     startActivity(intent);
 
