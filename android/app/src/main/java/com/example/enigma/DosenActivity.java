@@ -34,6 +34,7 @@ public class DosenActivity extends AppCompatActivity {
     Boolean CheckEditText;
     public static final String UserNIP = "";
     public static final String UserNama = "";
+    public static final String UserID = "";
     private String JSON_STRING;
 
 
@@ -175,10 +176,10 @@ public class DosenActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(DosenActivity.this, MasukDosen.class);
 
-                    //showDosen();
+                    showDosen();
                     //intent.putExtra(UserNama,konfigurasi.TAG_dsn_NAMA);
                     //intent.putExtra(UserNIP,konfigurasi.TAG_dsn_NIP);
-                    intent.putExtra(UserNama,email);
+                    //intent.putExtra(UserNama,email);
 
                     startActivity(intent);
 
@@ -229,6 +230,13 @@ public class DosenActivity extends AppCompatActivity {
                 dosen.put(konfigurasi.TAG_dsn_EMAIl,email);
                 dosen.put(konfigurasi.TAG_dsn_PASS,pass);
                 list.add(dosen);
+                Intent intent = new Intent(DosenActivity.this, MasukDosen.class);
+
+                intent.putExtra(UserNama,name);
+                intent.putExtra(UserNIP,nip);
+                intent.putExtra(UserID,id);
+
+                startActivity(intent);
             }
 
         } catch (JSONException e) {
