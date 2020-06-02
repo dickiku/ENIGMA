@@ -1,0 +1,8 @@
+1. copy folder enigma-web ke dalam file localhost kalian -> xampp/htdocs
+2. ubah database yg lama dengan database yg baru yg sudah saya sediakan (absensi.sql)
+3. ketika sudah melakukan ke 2 hal tersebut jangan lupa untuk mengubah convigurasi program dari enigma-web atau bisa mengikuti cara berikut:
+    1. masuk ke file config.php -> enigma-web/application/config/config.php
+    2. cari kode yg bertuliskan seperti ini : $config['base_url'] = 'http://192.168.1.10/enigma-web/';
+    3. ganti menjadi : $config['base_url'] = 'http://localhost/enigma-web/';
+    4. jangan lupa ketika sudah di ganti di save
+5. Silangkan dicoba.....
