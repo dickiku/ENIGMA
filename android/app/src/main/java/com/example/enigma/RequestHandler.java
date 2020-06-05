@@ -18,8 +18,7 @@ public class RequestHandler {
     //Metode ini mengambil 2 Argumen
     //Metode Pertama adalah URL dari Skrip yang digunakan untuk mengirimkan permintaan
     //Yang lainnya adalah HashMap dengan nilai pasangan nama yang berisi data yang akan dikirim dengan permintaan
-    public String sendPostRequest(String requestURL,
-                                  HashMap<String, String> postDataParams) {
+    public String sendPostRequest(String requestURL, HashMap<String, String> postDataParams) {
         //Membuat URL
         URL url;
 
@@ -86,10 +85,25 @@ public class RequestHandler {
         return sb.toString();
     }
 
-    public String sendGetRequestParam(String requestURL, String id){
+    public String sendGetRequestParamId(String requestURL, String id){
         StringBuilder sb =new StringBuilder();
         try {
             URL url = new URL(requestURL+id);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+            String s;
+            while((s=bufferedReader.readLine())!=null){
+                sb.append(s+"\n");
+            }
+        }catch(Exception e){
+        }
+        return sb.toString();
+    }
+    public String sendGetRequestParamMail(String requestURL, String email, String pass){
+        StringBuilder sb =new StringBuilder();
+        try {
+            URL url = new URL(requestURL+email+pass);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 

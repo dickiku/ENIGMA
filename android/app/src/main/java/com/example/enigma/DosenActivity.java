@@ -173,15 +173,16 @@ public class DosenActivity extends AppCompatActivity {
                 if(httpResponseMsg.equalsIgnoreCase("Data Matched")){
 
                     finish();
+                    getJSON();
 
-                    Intent intent = new Intent(DosenActivity.this, MasukDosen.class);
+                    //Intent intent = new Intent(DosenActivity.this, MasukDosen.class);
 
-                    showDosen();
+                    //showDosen();
                     //intent.putExtra(UserNama,konfigurasi.TAG_dsn_NAMA);
                     //intent.putExtra(UserNIP,konfigurasi.TAG_dsn_NIP);
                     //intent.putExtra(UserNama,email);
 
-                    startActivity(intent);
+                    //startActivity(intent);
 
                 }
                 else{
@@ -215,33 +216,49 @@ public class DosenActivity extends AppCompatActivity {
             jsonObject = new JSONObject(JSON_STRING);
             JSONArray result = jsonObject.getJSONArray(konfigurasi.TAG_JSON_ARRAY);
 
-            for(int i = 0; i<result.length(); i++){
-                JSONObject jo = result.getJSONObject(i);
-                String id = jo.getString(konfigurasi.TAG_dsn_ID);
-                String name = jo.getString(konfigurasi.TAG_dsn_NAMA);
-                String nip = jo.getString(konfigurasi.TAG_dsn_NIP);
-                String email = jo.getString(konfigurasi.TAG_dsn_EMAIl);
-                String pass = jo.getString(konfigurasi.TAG_dsn_PASS);
+            JSONObject jo = result.getJSONObject(0);
+            String id = jo.getString(konfigurasi.TAG_dsn_ID);
+            String name = jo.getString(konfigurasi.TAG_dsn_NAMA);
+            String nip = jo.getString(konfigurasi.TAG_dsn_NIP);
 
-                HashMap<String,String> dosen = new HashMap<>();
-                dosen.put(konfigurasi.TAG_dsn_ID,id);
-                dosen.put(konfigurasi.TAG_dsn_NAMA,name);
-                dosen.put(konfigurasi.TAG_dsn_NIP,nip);
-                dosen.put(konfigurasi.TAG_dsn_EMAIl,email);
-                dosen.put(konfigurasi.TAG_dsn_PASS,pass);
-                list.add(dosen);
-                Intent intent = new Intent(DosenActivity.this, MasukDosen.class);
+            Intent intent = new Intent(DosenActivity.this, MasukDosen.class);
+            intent.putExtra(UserNama,name);
+            intent.putExtra(UserNIP,nip);
+            intent.putExtra(UserID,id);
 
-                intent.putExtra(UserNama,name);
-                intent.putExtra(UserNIP,nip);
-                intent.putExtra(UserID,id);
-
-                startActivity(intent);
-            }
+            startActivity(intent);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+    private void getJSON(){
+        class GetJSON extends AsyncTask<Void,Void,String>{
+
+            ProgressDialog loading;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(DosenActivity.this,"Mengambil Data","Mohon Tunggu...",false,false);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                JSON_STRING = s;
+                showDosen();
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+                RequestHandler rh = new RequestHandler();
+                String s = rh.sendGetRequestParamMail(konfigurasi.URL_GETDATA_DSN,email,pass);
+                return s;
+            }
+        }
+        GetJSON gj = new GetJSON();
+        gj.execute();
     }
 
 }
