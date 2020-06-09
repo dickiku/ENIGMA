@@ -1,10 +1,10 @@
 <?php
 
     include('koneksi.php');
-    $email = $_POST['email'];
+    $nip = $_POST['nip'];
     $password = $_POST['pass'];
 
-    $Sql_Query = "SELECT * FROM dosen WHERE email = '$email' and password = '$password' ";
+    $Sql_Query = "SELECT * FROM dosen WHERE nip = '$nip' and password = '$password' ";
 
     $check = mysqli_fetch_array(mysqli_query($con,$Sql_Query));
 

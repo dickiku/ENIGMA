@@ -26,9 +26,9 @@ public class MasukDosen extends AppCompatActivity {
         nipShow = (TextView)findViewById(R.id.nipdsnmasuk);
 
         Intent intent = getIntent();
-        namaHolder = intent.getStringExtra(DosenActivity.UserNama);
+        //namaHolder = intent.getStringExtra(DosenActivity.UserNama);
         nipHolder = intent.getStringExtra(DosenActivity.UserNIP);
-        namaShow.setText(namaHolder);
+        //namaShow.setText(namaHolder);
         nipShow.setText(nipHolder);
 
         buttonlist = (Button) findViewById(R.id.buttonlist);

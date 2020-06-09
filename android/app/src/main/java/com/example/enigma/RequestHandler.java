@@ -100,10 +100,10 @@ public class RequestHandler {
         }
         return sb.toString();
     }
-    public String sendGetRequestParamMail(String requestURL, String email, String pass){
+    public String sendGetRequestParamMail(String requestURL, String nip, String pass){
         StringBuilder sb =new StringBuilder();
         try {
-            URL url = new URL(requestURL+email+pass);
+            URL url = new URL(requestURL+nip+pass);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 

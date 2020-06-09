@@ -28,9 +28,9 @@ public class DosenActivity extends AppCompatActivity {
     private Button buttonmasukdosen,buttondaftardosen;
     private ImageView backlogdosen;
     private TextView showpassdsn;
-    private String email, pass;
+    private String nip, pass;
     private EditText passdsnlogin;
-    private EditText emaildsnlogin;
+    private EditText nipdsnlogin;
     Boolean CheckEditText;
     public static final String UserNIP = "";
     public static final String UserNama = "";
@@ -68,7 +68,7 @@ public class DosenActivity extends AppCompatActivity {
             }
         });
 
-        emaildsnlogin = (EditText) findViewById(R.id.emaildsnlogin);
+        nipdsnlogin = (EditText) findViewById(R.id.nipdsnlogin);
         passdsnlogin = (EditText) findViewById(R.id.passdsnlogin);
         showpassdsn = (TextView)findViewById(R.id.showpassdsn);
 
@@ -119,7 +119,7 @@ public class DosenActivity extends AppCompatActivity {
 
         if(CheckEditText){
 
-            LoginDsn(email, pass);
+            LoginDsn(nip, pass);
 
         }
         else {
@@ -140,10 +140,10 @@ public class DosenActivity extends AppCompatActivity {
     }
     public void CheckEditTextIsEmptyOrNot(){
 
-        email = emaildsnlogin.getText().toString();
+        nip = nipdsnlogin.getText().toString();
         pass = passdsnlogin.getText().toString();
 
-        if(TextUtils.isEmpty(email) || TextUtils.isEmpty(pass))
+        if(TextUtils.isEmpty(nip) || TextUtils.isEmpty(pass))
         {
             CheckEditText = false;
         }
@@ -173,16 +173,16 @@ public class DosenActivity extends AppCompatActivity {
                 if(httpResponseMsg.equalsIgnoreCase("Data Matched")){
 
                     finish();
-                    getJSON();
+                    //getJSON();
 
-                    //Intent intent = new Intent(DosenActivity.this, MasukDosen.class);
+                    Intent intent = new Intent(DosenActivity.this, MasukDosen.class);
 
                     //showDosen();
                     //intent.putExtra(UserNama,konfigurasi.TAG_dsn_NAMA);
-                    //intent.putExtra(UserNIP,konfigurasi.TAG_dsn_NIP);
+                    intent.putExtra(UserNIP,konfigurasi.TAG_dsn_NIP);
                     //intent.putExtra(UserNama,email);
 
-                    //startActivity(intent);
+                    startActivity(intent);
 
                 }
                 else{
@@ -253,7 +253,7 @@ public class DosenActivity extends AppCompatActivity {
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequestParamMail(konfigurasi.URL_GETDATA_DSN,email,pass);
+                String s = rh.sendGetRequestParamMail(konfigurasi.URL_GETDATA_DSN,nip,pass);
                 return s;
             }
         }
