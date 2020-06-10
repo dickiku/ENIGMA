@@ -10,6 +10,20 @@
 	$query = mysqli_query($con,$sql);
 
 	if($query){
+		include "phpqrcode/qrlib.php"; 
+
+		$tempdir = "temp/";
+		if (!file_exists($tempdir))
+		mkdir($tempdir);
+
+		$codeContents = $nim;
+		$namaFile=$nim.".png";
+		$level=QR_ECLEVEL_H;
+		$UkuranPixel=10;
+		$UkuranFrame=4;
+
+		QRcode::png($codeContents, $tempdir.$namaFile, $level, $UkuranPixel, $UkuranFrame); 
+
 		echo 'Berhasil Menambahkan';
 	}else{
 		echo 'Gagal Menambahkan';
