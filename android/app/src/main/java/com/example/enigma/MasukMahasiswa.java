@@ -11,8 +11,8 @@ import android.widget.TextView;
 public class MasukMahasiswa extends AppCompatActivity {
     private Button buttoncode;
     private Button outmaha;
-    TextView EmailShow;
-    String EmailHolder;
+    TextView nimShow;
+    String nimHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +20,8 @@ public class MasukMahasiswa extends AppCompatActivity {
         setContentView(R.layout.activity_masuk_mahasiswa);
 
         Intent intent = getIntent();
-        EmailHolder = intent.getStringExtra(MahaActivity.UserEmail);
-        EmailShow.setText(EmailHolder);
+        nimHolder = intent.getStringExtra(MahaActivity.UserNim);
+        nimShow.setText(nimHolder);
 
         buttoncode = (Button)findViewById(R.id.buttoncode);
         buttoncode.setOnClickListener(new View.OnClickListener() {

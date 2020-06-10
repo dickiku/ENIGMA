@@ -24,10 +24,10 @@ public class MahaActivity extends AppCompatActivity {
     private ImageView backlogmaha;
     private EditText passmahalogin;
     private TextView showlogmaha;
-    private String email, pass;
-    private EditText emailmahalogin;
+    private String nim, pass;
+    private EditText nimmahalogin;
     Boolean CheckEditText;
-    public static final String UserEmail = "";
+    public static final String UserNim = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,7 @@ public class MahaActivity extends AppCompatActivity {
             }
         });
 
-        emailmahalogin = (EditText) findViewById(R.id.emailmahalogin);
+        nimmahalogin = (EditText) findViewById(R.id.nimmahalogin);
         passmahalogin = (EditText) findViewById(R.id.passmahalogin);
         showlogmaha = (TextView)findViewById(R.id.showlogmaha);
 
@@ -107,7 +107,7 @@ public class MahaActivity extends AppCompatActivity {
 
         if(CheckEditText){
 
-            LoginMhs(email, pass);
+            LoginMhs(nim, pass);
 
         }
         else {
@@ -129,10 +129,10 @@ public class MahaActivity extends AppCompatActivity {
 
     public void CheckEditTextIsEmptyOrNot(){
 
-        email = emailmahalogin.getText().toString();
+        nim = nimmahalogin.getText().toString();
         pass = passmahalogin.getText().toString();
 
-        if(TextUtils.isEmpty(email) || TextUtils.isEmpty(pass))
+        if(TextUtils.isEmpty(nim) || TextUtils.isEmpty(pass))
         {
             CheckEditText = false;
         }
@@ -141,7 +141,7 @@ public class MahaActivity extends AppCompatActivity {
             CheckEditText = true ;
         }
     }
-    public void LoginMhs(final String email, final String password){
+    public void LoginMhs(final String nim, final String password){
 
         class LoginMhsClass extends AsyncTask<String,Void,String> {
             ProgressDialog progressDialog;
@@ -165,7 +165,7 @@ public class MahaActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(MahaActivity.this, MasukMahasiswa.class);
 
-                    intent.putExtra(UserEmail,email);
+                    intent.putExtra(UserNim,nim);
 
                     startActivity(intent);
 
@@ -181,7 +181,7 @@ public class MahaActivity extends AppCompatActivity {
             protected String doInBackground(String... s) {
 
                 HashMap<String,String> params = new HashMap<>();
-                params.put(konfigurasi.KEY_maha_EMAIL,email);
+                params.put(konfigurasi.KEY_maha_NIM,nim);
                 params.put(konfigurasi.KEY_maha_PASS,password);
 
                 RequestHandler rh = new RequestHandler();
@@ -191,7 +191,7 @@ public class MahaActivity extends AppCompatActivity {
         }
 
         LoginMhsClass mahaLoginClass = new LoginMhsClass();
-        mahaLoginClass.execute(email,password);
+        mahaLoginClass.execute(nim,password);
     }
 
 }

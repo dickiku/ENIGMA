@@ -179,7 +179,8 @@ public class DosenActivity extends AppCompatActivity {
 
                     //showDosen();
                     //intent.putExtra(UserNama,konfigurasi.TAG_dsn_NAMA);
-                    intent.putExtra(UserNIP,konfigurasi.TAG_dsn_NIP);
+                    //intent.putExtra(UserNIP,konfigurasi.TAG_dsn_NIP);
+                    intent.putExtra(UserNIP,nip);
                     //intent.putExtra(UserNama,email);
 
                     startActivity(intent);
@@ -196,7 +197,7 @@ public class DosenActivity extends AppCompatActivity {
             protected String doInBackground(String... s) {
 
                 HashMap<String,String> params = new HashMap<>();
-                params.put(konfigurasi.KEY_dsn_EMAIL,email);
+                params.put(konfigurasi.KEY_dsn_NIP,nip);
                 params.put(konfigurasi.KEY_dsn_PASS,password);
 
                 RequestHandler rh = new RequestHandler();
