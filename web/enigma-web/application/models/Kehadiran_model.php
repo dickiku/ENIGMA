@@ -9,7 +9,7 @@ class Kehadiran_model extends CI_Model
     public function getAll()
     {
         return $this->db->from("kehadiran")
-            ->join('mahasiswa', 'mahasiswa.id_mhs=kehadiran.id_mhs')
+            ->join('mahasiswa', 'mahasiswa.nim=kehadiran.id_mhs')
             // ->join('dosen', 'dosen.id_dsn=kehadiran.id_dsn')
             ->get()    
             ->result();
@@ -24,7 +24,7 @@ class Kehadiran_model extends CI_Model
     public function getSession()
     {
         return $this->db->from($this->_tsession)
-            ->join('mahasiswa', 'mahasiswa.id_mhs=session.id_mhs')
+            ->join('mahasiswa', 'mahasiswa.nim=session.id_mhs')
             ->get()
             ->result();
     }

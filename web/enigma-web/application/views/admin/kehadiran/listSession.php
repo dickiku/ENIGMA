@@ -48,7 +48,8 @@
                                 <thead>
                                     <tr>
                                         <th>Nama Mahasiswa </th>
-                                        <th>Id Dosen</th>
+                                        <th>NIM </th>
+                                        <!-- <th>Id Dosen</th> -->
                                         <th>Waktu</th>
                                     </tr>
                                 </thead>
@@ -56,7 +57,8 @@
                                     <?php foreach ($session as $s): ?>
                                     <tr>
                                         <td><?= $s->nama ?></td>
-                                        <td><?= $s->id_dsn ?></td>
+                                        <td><?= $s->nim ?></td>
+                                        <!-- <td><?= $s->id_dsn ?></td> -->
                                         <td><?= $s->waktu ?></td>
                                     </tr>
                                     <?php endforeach; ?>
@@ -64,7 +66,8 @@
                                 <tfoot>
                                     <tr>
                                         <th>Nama Mahasiswa </th>
-                                        <th>Nama Dosen</th>
+                                        <th>NIM </th>
+                                        <!-- <th>Nama Dosen</th> -->
                                         <th>Waktu</th>
                                     </tr>
                                 </tfoot>

@@ -16,6 +16,13 @@ class Kehadiran extends CI_Controller
         $this->load->view("admin/kehadiran/listKehadiran", $data);
     }
 
+    public function delete($id)
+    {
+        $where = array('id_kehadiran' => $id);
+        $this->kehadiran_model->delKehadiran($where);
+        redirect('kehadiran');
+    }
+
     public function session()
     {
         $data["session"] = $this->kehadiran_model->getSession();

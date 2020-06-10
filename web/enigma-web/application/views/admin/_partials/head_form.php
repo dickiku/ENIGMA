@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Admin Dinus Abcence</title>
+<title>Admin Dinus Absence</title>
 <!-- Font Awesome -->
 <link rel="stylesheet" href="<?= base_url('plugins/fontawesome-free/css/all.min.css') ?>">
 <!-- Ionicons -->

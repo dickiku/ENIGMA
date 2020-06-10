@@ -47,7 +47,8 @@
                                 <thead>
                                     <tr>
                                         <th>Nama Mahasiswa </th>
-                                        <th>Id Dosen</th>
+                                        <th>NIM </th>
+                                        <!-- <th>Id Dosen</th> -->
                                         <th>Waktu</th>
                                         <th>Action</th>
                                         <!--<th>Platform(s)</th>-->
@@ -57,10 +58,11 @@
                                     <?php foreach ($kehadiran as $k): ?>
                                     <tr>
                                         <td><?= $k->nama ?></td>
-                                        <td><?= $k->id_dsn ?></td>
+                                        <td><?= $k->nim ?></td>
+                                        <!-- <td><?= $k->id_dsn ?></td> -->
                                         <td><?= $k->waktu ?></td>
                                         <td>
-                                            <a href="" class="btn btn-danger btn-sm" title="delete"><i class="fas fa-trash"></i></a>
+                                            <a href="<?= site_url('kehadiran/delete/'.$k->id_kehadiran) ?>" class="btn btn-danger btn-sm" title="delete"><i class="fas fa-trash"></i></a>
                                         </td>
                                         <!--<td>X</td>-->
                                     </tr>
@@ -69,7 +71,8 @@
                                 <tfoot>
                                     <tr>
                                         <th>Nama Mahasiswa </th>
-                                        <th>Id Dosen</th>
+                                        <th>NIM </th>
+                                        <!-- <th>Id Dosen</th> -->
                                         <th>Waktu</th>
                                         <th>Action</th>
                                         <!-- <th>CSS grade</th>-->

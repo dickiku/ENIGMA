@@ -20,10 +20,23 @@ class Mahasiswa extends CI_Controller
     }
     public function create()
     {
+        // include base_url("qr_builder/phpqrcode/qrlib.php");
         $nim = $this->input->post('nim');
         $nama = $this->input->post('nama');
         $email = $this->input->post('email');
         $pass = $this->input->post('password');
+
+        // $tempdir = base_url("qr_builder/temp/");
+        // if(!file_exists($tempdir))
+        // mkdir($tempdir);
+
+        // $codeContents = $nim;
+        // $namaFile = $nim.".png";
+        // $level = QR_ECLEVEL_H;
+        // $ukuranPixel = 10;
+        // $ukuranFrame = 4;
+
+        // QRcode::png($codeContents, $tempdir.$namaFile, $level, $ukuranPixel, $ukuranFrame);
 
         $data = array(
             'nim' => $nim,
