@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import static com.example.enigma.DosenActivity.UserNIP;
+
 public class MasukDosen extends AppCompatActivity {
     private Button buttonlist;
     private Button buttonabsen;
@@ -27,7 +29,7 @@ public class MasukDosen extends AppCompatActivity {
 
         Intent intent = getIntent();
         //namaHolder = intent.getStringExtra(DosenActivity.UserNama);
-        nipHolder = intent.getStringExtra(DosenActivity.UserNIP);
+        nipHolder = intent.getStringExtra(UserNIP);
         //namaShow.setText(namaHolder);
         nipShow.setText(nipHolder);
 
@@ -62,6 +64,7 @@ public class MasukDosen extends AppCompatActivity {
     }
     public void openAbsenScanner(){
         Intent intent = new Intent(this,AbsenScanner.class);
+        intent.putExtra(UserNIP,nipHolder);
         startActivity(intent);
     }
     public void openKembaliKeHome(){

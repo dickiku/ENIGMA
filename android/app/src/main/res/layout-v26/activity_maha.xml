@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:hint="@string/email"
+        android:hint="@string/nimm"
         android:gravity="center"
         android:layout_centerInParent="true"
         android:layout_alignTop="@+id/textView3"

@@ -6,6 +6,7 @@ public class konfigurasi {
     public static final String URL_LOGIN_MHS="http://192.168.137.1/Enigma/database/loginMaha.php";
     public static final String URL_ADD_DSN="http://192.168.137.1/Enigma/database/addDosen.php";
     public static final String URL_LOGIN_DSN="http://192.168.137.1/Enigma/database/loginDosen.php";
+    public static final String URL_Absen="http://192.168.137.1/Enigma/database/Absen.php";
     public static final String URL_GETDATA_DSN="http://192.168.137.1/Enigma/database/dataDosen.php";
 
     //Dibawah ini merupakan Kunci yang akan digunakan untuk mengirim permintaan ke Skrip PHP

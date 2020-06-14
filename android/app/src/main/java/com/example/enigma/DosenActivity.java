@@ -152,7 +152,7 @@ public class DosenActivity extends AppCompatActivity {
             CheckEditText = true ;
         }
     }
-    public void LoginDsn(final String email, final String password){
+    public void LoginDsn(final String nip, final String password){
 
         class LoginDsnClass extends AsyncTask<String,Void,String> {
             ProgressDialog progressDialog;
@@ -207,7 +207,7 @@ public class DosenActivity extends AppCompatActivity {
         }
 
         LoginDsnClass dosenLoginClass = new LoginDsnClass();
-        dosenLoginClass.execute(email,password);
+        dosenLoginClass.execute(nip,password);
     }
 
     private void showDosen(){
