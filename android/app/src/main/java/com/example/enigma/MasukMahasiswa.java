@@ -13,6 +13,7 @@ public class MasukMahasiswa extends AppCompatActivity {
     private Button outmaha;
     TextView nimShow;
     String nimHolder;
+    public static final String mahaNim = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class MasukMahasiswa extends AppCompatActivity {
     }
     public void openQRCode(){
         Intent intent = new Intent(this,QRCode.class);
+        intent.putExtra(mahaNim,nimHolder);
         startActivity(intent);
     }
     public void openKembaliHome(){
