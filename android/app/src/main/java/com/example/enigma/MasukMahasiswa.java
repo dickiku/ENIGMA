@@ -22,6 +22,7 @@ public class MasukMahasiswa extends AppCompatActivity {
 
         Intent intent = getIntent();
         nimHolder = intent.getStringExtra(MahaActivity.UserNim);
+        nimShow = (TextView)findViewById(R.id.nimmahamasuk);
         nimShow.setText(nimHolder);
 
         buttoncode = (Button)findViewById(R.id.buttoncode);

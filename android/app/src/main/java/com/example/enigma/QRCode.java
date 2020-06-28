@@ -20,12 +20,14 @@ public class QRCode extends AppCompatActivity {
         Intent intent = getIntent();
         nimQrHolder = intent.getStringExtra(MasukMahasiswa.mahaNim);
 
-        backqr = (ImageView) findViewById(R.id.backqr);
+        backqr = (ImageView) findViewById(R.id.imageView);
         Glide.with(QRCode.this)
                 // LOAD URL DARI INTERNET
-                .load(konfigurasi.URL_Qr_nim + nimQrHolder +".png");
+                .load(konfigurasi.URL_Qr_nim + nimQrHolder +".png")
+//                .load(konfigurasi.URL_Qr_nim +"A11.2017.10115.png");
                 // LOAD GAMBAR AWAL SEBELUM GAMBAR UTAMA MUNCUL, BISA DARI LOKAL DAN INTERNET
                 //.placeholder()
+                .into(backqr);
         backqr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
