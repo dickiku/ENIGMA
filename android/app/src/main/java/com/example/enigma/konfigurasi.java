@@ -9,6 +9,7 @@ public class konfigurasi {
     public static final String URL_Absen="http://192.168.1.13/Enigma/database/Absen.php";
     public static final String URL_GETDATA_DSN="http://192.168.1.13/Enigma/database/dataDosen.php";
     public static final String URL_Qr_nim="http://192.168.1.13/Enigma/database/temp/";
+    public static final String URL_List_Kehadiran="http://192.168.1.13/Enigma/database/listHadir.php/";
 
     //Dibawah ini merupakan Kunci yang akan digunakan untuk mengirim permintaan ke Skrip PHP
     //mahasiswa
@@ -37,4 +38,5 @@ public class konfigurasi {
     public static final String TAG_dsn_NAMA = "nama";
     public static final String TAG_dsn_EMAIl = "email";
     public static final String TAG_dsn_PASS = "pass";
+
 }
