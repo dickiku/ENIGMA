@@ -43,11 +43,11 @@ public class ListKehadiran extends AppCompatActivity{
             for(int i = 0; i<result.length(); i++){
                 JSONObject jo = result.getJSONObject(i);
                 String nim = jo.getString(konfigurasi.TAG_maha_NIM);
-                String name = jo.getString(konfigurasi.TAG_maha_NAMA);
+                String nama = jo.getString(konfigurasi.TAG_maha_NAMA);
 
                 HashMap<String,String> hadir = new HashMap<>();
                 hadir.put(konfigurasi.TAG_maha_NIM,nim);
-                hadir.put(konfigurasi.TAG_maha_NAMA,name);
+                hadir.put(konfigurasi.TAG_maha_NAMA,nama);
                 list.add(hadir);
             }
 

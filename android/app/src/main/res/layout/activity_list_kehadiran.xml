@@ -9,7 +9,6 @@
     <ListView
         android:id="@+id/listkelas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/activity_itemkelas">
+        android:layout_height="wrap_content">
     </ListView>
 </LinearLayout>
