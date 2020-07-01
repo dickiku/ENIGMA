@@ -39,25 +39,25 @@
         android:textColor="@color/hitam"
         android:textSize="16dp"/>
 
-    <Button
-        android:id="@+id/button2"
-        android:textColor="@color/hitam"
-        android:background="@color/put"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:padding="16dp"
-        android:textSize="16dp"
-        android:text="@string/kelas" />
+<!--    <Button-->
+<!--        android:id="@+id/button2"-->
+<!--        android:textColor="@color/hitam"-->
+<!--        android:background="@color/put"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:padding="16dp"-->
+<!--        android:textSize="16dp"-->
+<!--        android:text="@string/kelas" />-->
 
-    <Button
-        android:id="@+id/button5"
-        android:textColor="@color/hitam"
-        android:textSize="16dp"
-        android:background="@color/put"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/kelas"
-        android:layout_margin="16dp"
-        android:padding="16dp"/>
+<!--    <Button-->
+<!--        android:id="@+id/button5"-->
+<!--        android:textColor="@color/hitam"-->
+<!--        android:textSize="16dp"-->
+<!--        android:background="@color/put"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/kelas"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:padding="16dp"/>-->
 </LinearLayout>

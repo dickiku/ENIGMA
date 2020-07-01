@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide;
 
 public class QRCode extends AppCompatActivity {
     private ImageView backqr;
+    private ImageView gambarqr;
     private String nimQrHolder;
 
     @Override
@@ -20,14 +21,15 @@ public class QRCode extends AppCompatActivity {
         Intent intent = getIntent();
         nimQrHolder = intent.getStringExtra(MasukMahasiswa.mahaNim);
 
-        backqr = (ImageView) findViewById(R.id.imageView);
+        backqr = (ImageView) findViewById(R.id.backqr);
+        gambarqr = (ImageView) findViewById(R.id.gambarqr) ;
         Glide.with(QRCode.this)
                 // LOAD URL DARI INTERNET
                 .load(konfigurasi.URL_Qr_nim + nimQrHolder +".png")
 //                .load(konfigurasi.URL_Qr_nim +"A11.2017.10115.png");
                 // LOAD GAMBAR AWAL SEBELUM GAMBAR UTAMA MUNCUL, BISA DARI LOKAL DAN INTERNET
                 //.placeholder()
-                .into(backqr);
+                .into(gambarqr);
         backqr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

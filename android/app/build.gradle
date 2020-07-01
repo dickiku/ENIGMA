@@ -30,6 +30,6 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'me.dm7.barcodescanner:zxing:1.9'
     implementation 'me.biubiubiu.justifytext:library:1.1'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.android.support:support-v4:25.2.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
 }

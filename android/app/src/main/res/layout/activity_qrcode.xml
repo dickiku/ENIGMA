@@ -21,7 +21,7 @@
             android:layout_marginStart="16dp"/>
     </LinearLayout>
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/gambarqr"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_gravity="center_horizontal"

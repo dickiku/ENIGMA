@@ -3,8 +3,11 @@ package com.example.enigma;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -19,15 +22,25 @@ import java.util.List;
 
 public class ListKehadiran extends AppCompatActivity{
 // implements ListView.OnItemClickListener
-    private ListView listKelas;
+    private ListView listkelas;
 
     private String JSON_STRING;
+    private ImageView backtomasukdosen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_kehadiran);
-        listKelas = (ListView) findViewById(R.id.listkelas);
+
+        backtomasukdosen = (ImageView) findViewById(R.id.backtomasukdosen);
+        backtomasukdosen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMasukDosen();
+            }
+        });
+
+        listkelas = (ListView) findViewById(R.id.listkelas);
 //        listKelas.setOnItemClickListener(this);
         getJSON();
     }
@@ -60,7 +73,7 @@ public class ListKehadiran extends AppCompatActivity{
                 new String[]{konfigurasi.TAG_maha_NIM,konfigurasi.TAG_maha_NAMA},
                 new int[]{R.id.nimmahalist, R.id.namamahalist});
 
-        listKelas.setAdapter(adapter);
+        listkelas.setAdapter(adapter);
     }
 
     private void getJSON(){
@@ -92,7 +105,6 @@ public class ListKehadiran extends AppCompatActivity{
         gj.execute();
     }
 
-    @Override
  /*   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this, TampilPegawai.class);
         HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
@@ -100,5 +112,9 @@ public class ListKehadiran extends AppCompatActivity{
         intent.putExtra(konfigurasi.EMP_ID,empId);
         startActivity(intent);
     }*/
+    public void openMasukDosen(){
+        Intent intent = new Intent(this, MasukDosen.class);
+        startActivity(intent);
+    }
 }
 
