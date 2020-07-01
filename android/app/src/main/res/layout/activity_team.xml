@@ -16,6 +16,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/dodge">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/backk"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:id="@+id/OpenBacktoMainMenu"/>
+                </LinearLayout>
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"

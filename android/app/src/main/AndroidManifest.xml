@@ -39,7 +39,6 @@
             android:label="QR CODE"
             android:parentActivityName=".MasukMahasiswa"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".itemkelas" />
         <activity
             android:name=".ListKehadiran"
             android:parentActivityName=".MasukDosen"
