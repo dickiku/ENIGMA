@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 30 Jun 2020 pada 06.49
+-- Generation Time: 08 Jul 2020 pada 15.27
 -- Versi Server: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -73,23 +73,25 @@ CREATE TABLE IF NOT EXISTS `kehadiran` (
 `id_kehadiran` int(11) NOT NULL,
   `id_mhs` varchar(20) NOT NULL,
   `id_dsn` varchar(20) NOT NULL,
-  `waktu` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  `waktu` datetime NOT NULL,
+  `id_kelas` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `kehadiran`
 --
 
-INSERT INTO `kehadiran` (`id_kehadiran`, `id_mhs`, `id_dsn`, `waktu`) VALUES
-(1, 'A11.2017.10115', '0', '2020-06-10 00:00:00'),
-(2, 'A11.2017.10115', '0', '2020-06-10 00:00:00'),
-(3, 'A11.2017.10115', '1234', '0000-00-00 00:00:00'),
-(4, 'A11.2017.10115', '1234', '2020-06-15 11:15:27'),
-(5, 'A11.2017.10100', '1234', '2020-06-15 11:17:20'),
-(6, 'A11.2017.10115', '1234', '2020-06-15 13:14:44'),
-(7, 'A11.2017.10101', '1234', '2020-06-15 13:15:08'),
-(8, 'A11.2017.10115', '1234', '2020-06-28 00:31:27'),
-(9, 'A11.2017.10115', '1234', '2020-06-28 00:49:04');
+INSERT INTO `kehadiran` (`id_kehadiran`, `id_mhs`, `id_dsn`, `waktu`, `id_kelas`) VALUES
+(4, 'A11.2017.10115', '1234', '2020-06-15 11:15:27', 0),
+(5, 'A11.2017.10100', '1234', '2020-06-15 11:17:20', 0),
+(6, 'A11.2017.10115', '1234', '2020-06-15 13:14:44', 0),
+(7, 'A11.2017.10101', '1234', '2020-06-15 13:15:08', 0),
+(8, 'A11.2017.10115', '1234', '2020-06-28 00:31:27', 0),
+(9, 'A11.2017.10115', '1234', '2020-06-28 00:49:04', 0),
+(10, 'A11.2017.10115', '1234', '2020-06-30 14:46:45', 0),
+(11, 'A11.2017.10100', '1234', '2020-07-01 23:14:35', 0),
+(12, 'A11.2017.10100', '1234', '2020-07-06 13:34:31', 0),
+(13, 'A11.2017.10100', '1234', '2020-07-06 13:35:13', 0);
 
 -- --------------------------------------------------------
 
@@ -99,8 +101,9 @@ INSERT INTO `kehadiran` (`id_kehadiran`, `id_mhs`, `id_dsn`, `waktu`) VALUES
 
 CREATE TABLE IF NOT EXISTS `kelas` (
 `id_kelas` int(11) NOT NULL,
+  `nama_kelas` varchar(20) NOT NULL,
   `no_kelas` varchar(20) NOT NULL,
-  `id_dsn` int(11) NOT NULL
+  `nip` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -136,18 +139,23 @@ CREATE TABLE IF NOT EXISTS `session` (
 `id_session` int(11) NOT NULL,
   `id_mhs` varchar(20) NOT NULL,
   `id_dsn` varchar(20) NOT NULL,
-  `waktu` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `waktu` datetime NOT NULL,
+  `id_kelas` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `session`
 --
 
-INSERT INTO `session` (`id_session`, `id_mhs`, `id_dsn`, `waktu`) VALUES
-(1, 'A11.2017.10115', '1234', '2020-06-15 13:14:44'),
-(2, 'A11.2017.10101', '1234', '2020-06-15 13:15:07'),
-(3, 'A11.2017.10115', '1234', '2020-06-28 00:31:27'),
-(4, 'A11.2017.10115', '1234', '2020-06-28 00:49:04');
+INSERT INTO `session` (`id_session`, `id_mhs`, `id_dsn`, `waktu`, `id_kelas`) VALUES
+(1, 'A11.2017.10115', '1234', '2020-06-15 13:14:44', 0),
+(2, 'A11.2017.10101', '1234', '2020-06-15 13:15:07', 0),
+(3, 'A11.2017.10115', '1234', '2020-06-28 00:31:27', 0),
+(4, 'A11.2017.10115', '1234', '2020-06-28 00:49:04', 0),
+(5, 'A11.2017.10115', '1234', '2020-06-30 14:46:45', 0),
+(6, 'A11.2017.10100', '1234', '2020-07-01 23:14:35', 0),
+(7, 'A11.2017.10100', '1234', '2020-07-06 13:34:31', 0),
+(8, 'A11.2017.10100', '1234', '2020-07-06 13:35:13', 0);
 
 --
 -- Indexes for dumped tables
@@ -207,7 +215,7 @@ MODIFY `id_dsn` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT for table `kehadiran`
 --
 ALTER TABLE `kehadiran`
-MODIFY `id_kehadiran` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `id_kehadiran` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `kelas`
 --
@@ -222,7 +230,7 @@ MODIFY `id_mhs` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `session`
 --
 ALTER TABLE `session`
-MODIFY `id_session` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id_session` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

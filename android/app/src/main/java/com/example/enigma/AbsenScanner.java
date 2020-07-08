@@ -32,13 +32,16 @@ public class AbsenScanner extends AppCompatActivity implements ZXingScannerView.
     private ZXingScannerView scannerView;
     private ImageView backabsen;
     String nipHolder;
+    private String id;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
-        nipHolder = intent.getStringExtra(UserNIP);
+        nipHolder = intent.getStringExtra(konfigurasi.DSN_NIP);
+        id = intent.getStringExtra(konfigurasi.KLS_ID);
 
         scannerView = new ZXingScannerView(this);
         setContentView(scannerView);
@@ -169,6 +172,7 @@ public class AbsenScanner extends AppCompatActivity implements ZXingScannerView.
                 HashMap<String,String> params = new HashMap<>();
                 params.put(konfigurasi.KEY_dsn_NIP,nipHolder);
                 params.put(konfigurasi.KEY_maha_NIM ,scanResult);
+                params.put(konfigurasi.KEY_kls_ID ,id);
 
                 RequestHandler rh = new RequestHandler();
                 String res = rh.sendPostRequest(konfigurasi.URL_Absen, params);

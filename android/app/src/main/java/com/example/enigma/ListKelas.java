@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -20,17 +21,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ListKehadiran extends AppCompatActivity{
-// implements ListView.OnItemClickListener
+import static com.example.enigma.DosenActivity.UserNIP;
+
+public class ListKelas extends AppCompatActivity implements ListView.OnItemClickListener{
     private ListView listkelas;
 
     private String JSON_STRING;
     private ImageView backtomasukdosen;
+    String nipHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_kehadiran);
+        setContentView(R.layout.activity_list_kelas);
+
+        Intent intent = getIntent();
+        nipHolder = intent.getStringExtra(UserNIP);
 
         backtomasukdosen = (ImageView) findViewById(R.id.backtomasukdosen);
         backtomasukdosen.setOnClickListener(new View.OnClickListener() {
@@ -40,13 +46,13 @@ public class ListKehadiran extends AppCompatActivity{
             }
         });
 
-        listkelas = (ListView) findViewById(R.id.listhadir);
-//        listKelas.setOnItemClickListener(this);
+        listkelas = (ListView) findViewById(R.id.listkelas);
+        listkelas.setOnItemClickListener(this);
         getJSON();
     }
 
 
-    private void showHadir(){
+    private void showKelas(){
         JSONObject jsonObject = null;
         ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
         try {
@@ -55,13 +61,13 @@ public class ListKehadiran extends AppCompatActivity{
 
             for(int i = 0; i<result.length(); i++){
                 JSONObject jo = result.getJSONObject(i);
-                String nim = jo.getString(konfigurasi.TAG_maha_NIM);
-                String nama = jo.getString(konfigurasi.TAG_maha_NAMA);
+                String nama = jo.getString(konfigurasi.TAG_kelas_NAMA);
+                String nomor = jo.getString(konfigurasi.TAG_kelas_NO);
 
-                HashMap<String,String> hadir = new HashMap<>();
-                hadir.put(konfigurasi.TAG_maha_NIM,nim);
-                hadir.put(konfigurasi.TAG_maha_NAMA,nama);
-                list.add(hadir);
+                HashMap<String,String> kelas = new HashMap<>();
+                kelas.put(konfigurasi.TAG_maha_NAMA,nama);
+                kelas.put(konfigurasi.TAG_maha_NIM,nomor);
+                list.add(kelas);
             }
 
         } catch (JSONException e) {
@@ -69,9 +75,9 @@ public class ListKehadiran extends AppCompatActivity{
         }
 
         ListAdapter adapter = new SimpleAdapter(
-                ListKehadiran.this, list, R.layout.list_hadir,
-                new String[]{konfigurasi.TAG_maha_NIM,konfigurasi.TAG_maha_NAMA},
-                new int[]{R.id.nimmahalist, R.id.namamahalist});
+                ListKelas.this, list, R.layout.list_kelas,
+                new String[]{konfigurasi.TAG_kelas_NAMA,konfigurasi.TAG_kelas_NO},
+                new int[]{R.id.namakelaslist, R.id.nokelaslist});
 
         listkelas.setAdapter(adapter);
     }
@@ -83,7 +89,7 @@ public class ListKehadiran extends AppCompatActivity{
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ListKehadiran.this,"Mengambil Data","Mohon Tunggu...",false,false);
+                loading = ProgressDialog.show(ListKelas.this,"Mengambil Data","Mohon Tunggu...",false,false);
             }
 
             @Override
@@ -91,13 +97,13 @@ public class ListKehadiran extends AppCompatActivity{
                 super.onPostExecute(s);
                 loading.dismiss();
                 JSON_STRING = s;
-                showHadir();
+                showKelas();
             }
 
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequest(konfigurasi.URL_List_Kehadiran);
+                String s = rh.sendGetRequest(konfigurasi.URL_List_Kelas);
                 return s;
             }
         }
@@ -105,13 +111,14 @@ public class ListKehadiran extends AppCompatActivity{
         gj.execute();
     }
 
- /*   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(this, TampilPegawai.class);
-        HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
-        String empId = map.get(konfigurasi.TAG_ID).toString();
-        intent.putExtra(konfigurasi.EMP_ID,empId);
-        startActivity(intent);
-    }*/
+       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+           Intent intent = new Intent(this, AbsenScanner.class);
+           HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
+           String klsId = map.get(konfigurasi.TAG_kelas_ID).toString();
+           intent.putExtra(konfigurasi.KLS_ID,klsId);
+           intent.putExtra(konfigurasi.DSN_NIP,nipHolder);
+           startActivity(intent);
+       }
     public void openMasukDosen(){
         Intent intent = new Intent(this, MasukDosen.class);
         startActivity(intent);

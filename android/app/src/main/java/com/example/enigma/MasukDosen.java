@@ -63,7 +63,7 @@ public class MasukDosen extends AppCompatActivity {
         startActivity(intent);
     }
     public void openAbsenScanner(){
-        Intent intent = new Intent(this,AbsenScanner.class);
+        Intent intent = new Intent(this,ListKelas.class);
         intent.putExtra(UserNIP,nipHolder);
         startActivity(intent);
     }
