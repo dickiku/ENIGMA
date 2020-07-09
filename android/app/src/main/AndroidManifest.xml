@@ -44,6 +44,10 @@
             android:parentActivityName=".MasukDosen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
+            android:name=".ListKelas"
+            android:parentActivityName=".MasukDosen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name=".MasukMahasiswa"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity

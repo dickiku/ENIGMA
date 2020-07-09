@@ -22,7 +22,7 @@ import java.util.List;
 
 public class ListKehadiran extends AppCompatActivity{
 // implements ListView.OnItemClickListener
-    private ListView listkelas;
+    private ListView listhadir;
 
     private String JSON_STRING;
     private ImageView backtomasukdosen;
@@ -40,7 +40,7 @@ public class ListKehadiran extends AppCompatActivity{
             }
         });
 
-        listkelas = (ListView) findViewById(R.id.listhadir);
+        listhadir = (ListView) findViewById(R.id.listhadir);
 //        listKelas.setOnItemClickListener(this);
         getJSON();
     }
@@ -73,7 +73,7 @@ public class ListKehadiran extends AppCompatActivity{
                 new String[]{konfigurasi.TAG_maha_NIM,konfigurasi.TAG_maha_NAMA},
                 new int[]{R.id.nimmahalist, R.id.namamahalist});
 
-        listkelas.setAdapter(adapter);
+        listhadir.setAdapter(adapter);
     }
 
     private void getJSON(){

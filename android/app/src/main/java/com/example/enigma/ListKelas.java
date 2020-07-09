@@ -27,7 +27,7 @@ public class ListKelas extends AppCompatActivity implements ListView.OnItemClick
     private ListView listkelas;
 
     private String JSON_STRING;
-    private ImageView backtomasukdosen;
+    private ImageView backtomasukdosen2;
     String nipHolder;
 
     @Override
@@ -38,13 +38,13 @@ public class ListKelas extends AppCompatActivity implements ListView.OnItemClick
         Intent intent = getIntent();
         nipHolder = intent.getStringExtra(UserNIP);
 
-        backtomasukdosen = (ImageView) findViewById(R.id.backtomasukdosen);
-        backtomasukdosen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMasukDosen();
-            }
-        });
+//        backtomasukdosen2 = (ImageView) findViewById(R.id.backtomasukdosen);
+//        backtomasukdosen2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openMasukDosen2();
+//            }
+//        });
 
         listkelas = (ListView) findViewById(R.id.listkelas);
         listkelas.setOnItemClickListener(this);
@@ -119,9 +119,9 @@ public class ListKelas extends AppCompatActivity implements ListView.OnItemClick
            intent.putExtra(konfigurasi.DSN_NIP,nipHolder);
            startActivity(intent);
        }
-    public void openMasukDosen(){
-        Intent intent = new Intent(this, MasukDosen.class);
-        startActivity(intent);
-    }
+//    public void openMasukDosen2(){
+//        Intent intent = new Intent(this, MasukDosen.class);
+//        startActivity(intent);
+//    }
 }
 
