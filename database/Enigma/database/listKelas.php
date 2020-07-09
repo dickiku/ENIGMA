@@ -13,7 +13,6 @@
 
 	while($row = mysqli_fetch_array($r)){
 		
-		//Memasukkan Nama dan ID kedalam Array Kosong yang telah dibuat 
 		array_push($result,array(
 			"namakls"=>$row['nama_kelas'],
 			"nokls"=>$row['no_kelas'],

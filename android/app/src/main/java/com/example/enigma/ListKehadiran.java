@@ -27,7 +27,7 @@ public class ListKehadiran extends AppCompatActivity{
     private String JSON_STRING;
     private ImageView backtomasukdosen;
     private String nipHolder;
-    private String id;
+//    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class ListKehadiran extends AppCompatActivity{
 
         Intent intent = getIntent();
         nipHolder = intent.getStringExtra(konfigurasi.DSN_NIP);
-        id = intent.getStringExtra(konfigurasi.KLS_ID);
+ //       id = intent.getStringExtra(konfigurasi.KLS_ID);
 
 
         backtomasukdosen = (ImageView) findViewById(R.id.backtomasukdosen);
@@ -104,7 +104,8 @@ public class ListKehadiran extends AppCompatActivity{
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequestParamId(konfigurasi.URL_List_Kehadiran,id);
+                String s = rh.sendGetRequest(konfigurasi.URL_List_Kehadiran);
+//                String s = rh.sendGetRequestParamId(konfigurasi.URL_List_Kehadiran,id);
                 return s;
             }
         }
@@ -113,7 +114,8 @@ public class ListKehadiran extends AppCompatActivity{
     }
 
     public void openMasukDosen(){
-        Intent intent = new Intent(this, tampil_kelas.class);
+        Intent intent = new Intent(this, MasukDosen.class);
+//        Intent intent = new Intent(this, tampil_kelas.class);
         intent.putExtra(konfigurasi.DSN_NIP,nipHolder);
         startActivity(intent);
     }

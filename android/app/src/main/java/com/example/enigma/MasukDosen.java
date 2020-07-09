@@ -59,7 +59,8 @@ public class MasukDosen extends AppCompatActivity {
 
     }
     public void openlistkehadiran(){
-        Intent intent = new Intent(this,tampil_kelas.class);
+        Intent intent = new Intent(this,ListKehadiran.class);
+//        Intent intent = new Intent(this,tampil_kelas.class);
         startActivity(intent);
     }
     public void openAbsenScanner(){
