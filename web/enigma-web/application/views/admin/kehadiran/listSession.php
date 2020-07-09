@@ -50,6 +50,7 @@
                                         <th>Nama Mahasiswa </th>
                                         <th>NIM </th>
                                         <!-- <th>Id Dosen</th> -->
+                                        <th>Kelas</th>
                                         <th>Waktu</th>
                                     </tr>
                                 </thead>
@@ -59,6 +60,7 @@
                                         <td><?= $s->nama ?></td>
                                         <td><?= $s->nim ?></td>
                                         <!-- <td><?= $s->id_dsn ?></td> -->
+                                        <td><?= $s->nama_kelas ?></td>
                                         <td><?= $s->waktu ?></td>
                                     </tr>
                                     <?php endforeach; ?>
@@ -68,6 +70,7 @@
                                         <th>Nama Mahasiswa </th>
                                         <th>NIM </th>
                                         <!-- <th>Nama Dosen</th> -->
+                                        <th>Kelas</th>
                                         <th>Waktu</th>
                                     </tr>
                                 </tfoot>

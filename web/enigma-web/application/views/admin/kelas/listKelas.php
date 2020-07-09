@@ -21,12 +21,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Daftar Kehadiran Mahasiswa </h1>
+                        <h1>Daftar Kelas </h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Daftar Kehadiran Mahasiswa</li>
+                            <li class="breadcrumb-item active">Daftar Kelas</li>
                         </ol>
                     </div>
                 </div>
@@ -39,46 +39,40 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Daftar Kehadiran Mahasiswa</h3>
+                            <h3 class="card-title">Daftar Kelas</h3>
+                            <a href="<?= site_url('kelas/toadd') ?>" class="btn btn-primary btn-xs" title="tambah kelas"><i class="fas fa-plus"></i></a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Nama Mahasiswa </th>
-                                        <th>NIM </th>
-                                        <!-- <th>Id Dosen</th> -->
-                                        <th>Kelas</th>
-                                        <th>Waktu</th>
+                                        <th>Nama kelas </th>
+                                        <th>No Kelas </th>
+                                        <th>Nama Dosen</th>
                                         <th>Action</th>
-                                        <!--<th>Platform(s)</th>-->
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($kehadiran as $k): ?>
+                                    <?php foreach ($kelas as $k): ?>
                                     <tr>
-                                        <td><?= $k->nama ?></td>
-                                        <td><?= $k->nim ?></td>
-                                        <!-- <td><?= $k->id_dsn ?></td> -->
                                         <td><?= $k->nama_kelas ?></td>
-                                        <td><?= $k->waktu ?></td>
+                                        <td><?= $k->no_kelas ?></td>
+                                        <td><?= $k->nama ?></td>
                                         <td>
-                                            <a href="<?= site_url('kehadiran/delete/'.$k->id_kehadiran) ?>" class="btn btn-danger btn-sm" title="delete"><i class="fas fa-trash"></i></a>
+                                            <a href="" class="btn btn-success btn-sm" title="detail"><i class="fas fa-file-alt"></i></a>
+                                            <a href="<?= site_url('kelas/toedit/'.$k->id_kelas) ?>" class="btn btn-info btn-sm" title="edit"><i class="fas fa-edit"></i></a>
+                                            <a href="<?= site_url('kelas/delete/'.$k->id_kelas) ?>" class="btn btn-danger btn-sm" title="delete"><i class="fas fa-trash"></i></a>
                                         </td>
-                                        <!--<td>X</td>-->
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Nama Mahasiswa </th>
-                                        <th>NIM </th>
-                                        <!-- <th>Id Dosen</th> -->
-                                        <th>Kelas</th>
-                                        <th>Waktu</th>
+                                        <th>Nama kelas </th>
+                                        <th>No Kelas </th>
+                                        <th>Nama Dosen</th>
                                         <th>Action</th>
-                                        <!-- <th>CSS grade</th>-->
                                     </tr>
                                 </tfoot>
                             </table>
