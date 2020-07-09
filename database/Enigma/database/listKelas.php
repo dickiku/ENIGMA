@@ -16,7 +16,8 @@
 		//Memasukkan Nama dan ID kedalam Array Kosong yang telah dibuat 
 		array_push($result,array(
 			"namakls"=>$row['nama_kelas'],
-			"nokls"=>$row['no_kelas']
+			"nokls"=>$row['no_kelas'],
+			"idkls"=>$row['id_kelas']
 		));
 	}
 	

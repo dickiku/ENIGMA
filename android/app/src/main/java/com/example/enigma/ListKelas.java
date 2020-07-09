@@ -63,12 +63,12 @@ public class ListKelas extends AppCompatActivity implements ListView.OnItemClick
                 JSONObject jo = result.getJSONObject(i);
                 String nama = jo.getString(konfigurasi.TAG_kelas_NAMA);
                 String nomor = jo.getString(konfigurasi.TAG_kelas_NO);
-//                String id = jo.getString(konfigurasi.TAG_kelas_ID);
+                String id = jo.getString(konfigurasi.TAG_kelas_ID);
 
                 HashMap<String,String> kelas = new HashMap<>();
                 kelas.put(konfigurasi.TAG_kelas_NAMA,nama);
                 kelas.put(konfigurasi.TAG_kelas_NO,nomor);
-//                kelas.put(konfigurasi.TAG_kelas_ID,id);
+                kelas.put(konfigurasi.TAG_kelas_ID,id);
                 list.add(kelas);
             }
 
