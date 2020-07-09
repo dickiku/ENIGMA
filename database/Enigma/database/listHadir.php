@@ -1,10 +1,10 @@
 <?php 
  	
 	include('koneksi.php');
-	$id = $_GET['id'];
+	$id = $_GET['idkls'];
 	
 	//Membuat SQL Query
-	$sql = "SELECT * FROM session INNER JOIN mahasiswa ON session.id_mhs = mahasiswa.nim";
+	$sql = "SELECT * FROM session INNER JOIN mahasiswa ON session.id_mhs = mahasiswa.nim WHERE id_kelas=$id";
 	//$sql = "SELECT * FROM session";
 	// $sql = "SELECT * FROM mahasiswa AS m INNER JOIN session AS s ON m.id_mhs = s.id_mhs";
 	// $sql = "SELECT * FROM mahasiwa";
