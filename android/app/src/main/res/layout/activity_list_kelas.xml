@@ -20,7 +20,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_gravity="center"
                 android:background="@drawable/backk"
-                android:id="@+id/backtomasukdosen2"/>
+                android:id="@+id/kemenudosen"/>
 
         </LinearLayout>
         <TextView

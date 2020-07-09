@@ -27,7 +27,7 @@ public class ListKelas extends AppCompatActivity implements ListView.OnItemClick
     private ListView listkelas;
 
     private String JSON_STRING;
-    private ImageView backtomasukdosen2;
+    private ImageView kemenudosen;
     String nipHolder;
 
     @Override
@@ -35,16 +35,16 @@ public class ListKelas extends AppCompatActivity implements ListView.OnItemClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_kelas);
 
+        kemenudosen = (ImageView) findViewById(R.id.kemenudosen);
+        kemenudosen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                kemenudosenlagi();
+            }
+        });
+
         Intent intent = getIntent();
         nipHolder = intent.getStringExtra(UserNIP);
-
-//        backtomasukdosen2 = (ImageView) findViewById(R.id.backtomasukdosen);
-//        backtomasukdosen2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                openMasukDosen2();
-//            }
-//        });
 
         listkelas = (ListView) findViewById(R.id.listkelas);
         listkelas.setOnItemClickListener(this);
@@ -63,10 +63,12 @@ public class ListKelas extends AppCompatActivity implements ListView.OnItemClick
                 JSONObject jo = result.getJSONObject(i);
                 String nama = jo.getString(konfigurasi.TAG_kelas_NAMA);
                 String nomor = jo.getString(konfigurasi.TAG_kelas_NO);
+//                String id = jo.getString(konfigurasi.TAG_kelas_ID);
 
                 HashMap<String,String> kelas = new HashMap<>();
-                kelas.put(konfigurasi.TAG_maha_NAMA,nama);
-                kelas.put(konfigurasi.TAG_maha_NIM,nomor);
+                kelas.put(konfigurasi.TAG_kelas_NAMA,nama);
+                kelas.put(konfigurasi.TAG_kelas_NO,nomor);
+//                kelas.put(konfigurasi.TAG_kelas_ID,id);
                 list.add(kelas);
             }
 
@@ -114,14 +116,14 @@ public class ListKelas extends AppCompatActivity implements ListView.OnItemClick
        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
            Intent intent = new Intent(this, AbsenScanner.class);
            HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
-           String klsId = map.get(konfigurasi.TAG_kelas_ID).toString();
+           String klsId = map.get(konfigurasi.TAG_kelas_ID);
            intent.putExtra(konfigurasi.KLS_ID,klsId);
            intent.putExtra(konfigurasi.DSN_NIP,nipHolder);
            startActivity(intent);
        }
-//    public void openMasukDosen2(){
-//        Intent intent = new Intent(this, MasukDosen.class);
-//        startActivity(intent);
-//    }
+    public void kemenudosenlagi(){
+        Intent intent = new Intent(this, MasukDosen.class);
+        startActivity(intent);
+    }
 }
 
