@@ -31,7 +31,7 @@ public class AbsenScanner extends AppCompatActivity implements ZXingScannerView.
     private static final int REQUEST_CAMERA = 1;
     private ZXingScannerView scannerView;
     private ImageView backabsen;
-    String nipHolder;
+    private String nipHolder;
     private String id;
 
 

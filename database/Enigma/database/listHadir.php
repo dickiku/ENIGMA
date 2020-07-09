@@ -1,6 +1,7 @@
 <?php 
- 
+ 	
 	include('koneksi.php');
+	$id = $_GET['id'];
 	
 	//Membuat SQL Query
 	$sql = "SELECT * FROM session INNER JOIN mahasiswa ON session.id_mhs = mahasiswa.nim";

@@ -26,11 +26,18 @@ public class ListKehadiran extends AppCompatActivity{
 
     private String JSON_STRING;
     private ImageView backtomasukdosen;
+    private String nipHolder;
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_kehadiran);
+
+        Intent intent = getIntent();
+        nipHolder = intent.getStringExtra(konfigurasi.DSN_NIP);
+        id = intent.getStringExtra(konfigurasi.KLS_ID);
+
 
         backtomasukdosen = (ImageView) findViewById(R.id.backtomasukdosen);
         backtomasukdosen.setOnClickListener(new View.OnClickListener() {
@@ -97,7 +104,7 @@ public class ListKehadiran extends AppCompatActivity{
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequest(konfigurasi.URL_List_Kehadiran);
+                String s = rh.sendGetRequestParamId(konfigurasi.URL_List_Kehadiran,id);
                 return s;
             }
         }
@@ -105,15 +112,9 @@ public class ListKehadiran extends AppCompatActivity{
         gj.execute();
     }
 
- /*   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(this, TampilPegawai.class);
-        HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
-        String empId = map.get(konfigurasi.TAG_ID).toString();
-        intent.putExtra(konfigurasi.EMP_ID,empId);
-        startActivity(intent);
-    }*/
     public void openMasukDosen(){
         Intent intent = new Intent(this, tampil_kelas.class);
+        intent.putExtra(konfigurasi.DSN_NIP,nipHolder);
         startActivity(intent);
     }
 }
